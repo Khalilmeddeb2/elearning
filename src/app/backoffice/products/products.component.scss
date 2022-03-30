@@ -1,0 +1,32 @@
+@import "../../../assets/backoffice/plugins/bootstrap/css/bootstrap.min.css";
+@import "../../../assets/backoffice/plugins/footable-bootstrap/css/footable.bootstrap.min.css";
+@import "../../../assets/backoffice/plugins/footable-bootstrap/css/footable.standalone.min.css";
+@import "../../../assets/backoffice/css/main.css";
+@import "../../../assets/backoffice/css/ecommerce.css";
+@import "../../../assets/backoffice/css/color_skins.css";
+@import "../../../assets/backoffice/css/ecommerce.css";
+
+.block-header a {
+  color: var(--dil-green) !important;
+}
+
+.pagination.pagination-primary .page-item.active > .page-link,
+.pagination.pagination-primary .page-item.active > .page-link:focus,
+.pagination.pagination-primary .page-item.active > .page-link:hover {
+  background-color: var(--dil-green) !important;
+  border-color: var(--dil-green) !important;
+}
+
+.btn-primary {
+  background-color: var(--dil-green) !important;
+}
+
+tr {
+  cursor: pointer !important;
+}
+
+::ng-deep .btn,
+.navbar .navbar-nav > button.btn {
+  background-color: #fff !important;
+  color: black !important;
+}

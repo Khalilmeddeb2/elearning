@@ -1,0 +1,143 @@
+@import "../../../../../../assets/backoffice/plugins/bootstrap/css/bootstrap.min.css";
+@import "../../../../../../assets/backoffice/plugins/footable-bootstrap/css/footable.bootstrap.min.css";
+@import "../../../../../../assets/backoffice/plugins/footable-bootstrap/css/footable.standalone.min.css";
+@import "../../../../../../assets/backoffice/second-template/css/components.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/multi-select/0.9.12/css/multi-select.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.6.0/bootstrap-tagsinput.css";
+@import "../../../../../../assets/backoffice/plugins/jquery-spinner/css/bootstrap-spinner.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.css";
+@import "../../../../../../assets/backoffice/css/main.css";
+@import "../../../../../../assets/backoffice/css/ecommerce.css";
+@import "../../../../../../assets/backoffice/css/color_skins.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+.block-header a {
+  color: var(--dil-green) !important;
+}
+
+.btn-primary {
+  background-color: var(--dil-green) !important;
+  border-radius: 50px !important;
+}
+
+button .btn .dropdown-toggle {
+  display: none !important;
+}
+
+::ng-deep .bootstrap-tagsinput {
+  border: none !important;
+  box-shadow: none !important;
+}
+::ng-deep .bootstrap-tagsinput .tag {
+  background-color: var(--dil-green) !important;
+  padding: 1px 7px !important;
+  border-radius: 3px !important;
+}
+::ng-deep .bootstrap-tagsinput input {
+  border: 0.7px solid #caced2 !important;
+  border-radius: 3px !important;
+}
+
+::ng-deep .dropzone {
+  min-height: 200px !important;
+  height: 200px !important;
+  padding: 6px 20px !important;
+}
+::ng-deep .dropzone.dz-clickable .dz-message,
+.dropzone.dz-clickable .dz-message {
+  font-size: 15px !important;
+}
+::ng-deep .dropzone .dz-message .drag-icon-cph .material-icons {
+  font-size: 50px !important;
+}
+::ng-deep .dropzone .dz-preview.dz-image-preview {
+  background: none !important;
+  float: left !important;
+}
+.material-icons {
+  font-size: 15px !important;
+}
+.spinner-btn {
+  border: none !important;
+  background: none !important;
+  color: var(--dil-blue) !important;
+}
+::ng-deep .noUi-handle:before,
+::ng-deep .noUi-handle:after {
+  content: none !important;
+}
+::ng-deep .noUi-handle {
+  border-radius: 50px !important;
+  cursor: pointer !important;
+}
+::ng-deep .noUi-horizontal .noUi-handle {
+  width: 24px !important;
+  height: 24px !important;
+  right: -17px;
+  top: -10px !important;
+}
+::ng-deep .noUi-connect {
+  background: var(--dil-green) !important;
+}
+
+::ng-deep .dropdown-item.active {
+  background-color: var(--dil-green) !important;
+}
+
+.droparea {
+  border: 2px dashed #ccc;
+  height: 200px;
+  text-align: center;
+  position: relative;
+  background-color: #f7f7f7;
+}
+.browse-file {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.droparea p {
+  margin-top: 80px;
+}
+.droparea.active {
+  border: 2px dashed #82e318;
+  background-color: #def1cc;
+}
+.file-list .list-group-item,
+.file-list .card-header {
+  padding: 0.5rem 1.25rem;
+}
+.file-list span {
+  color: #82e318;
+}
+
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  padding: 1% !important;
+  background-color: white !important;
+}
+::ng-deep .ng-dropdown-panel {
+  width: 95% !important;
+  border: 1px solid #d0d0d0;
+}
+
+
+p,
+label {
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+  margin: .4rem;
+}
+p {
+  line-height: 1.61em;
+  margin-left: 400px;
+  font-size: 80%;
+  color: #dc3545;
+}

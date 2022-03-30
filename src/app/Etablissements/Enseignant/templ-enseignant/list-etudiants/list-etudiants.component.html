@@ -1,0 +1,60 @@
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Listes des étudiants
+                        <small class="text-muted">Bienvenue à BrainNut </small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                   
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/EnseignantHome"><i class="zmdi zmdi-home"></i>
+                            Enseignant</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/EnseignantHome/classes">classes</a></li>
+                        <li class="breadcrumb-item active">Listes des étudiants</li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+       
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card product_item_list">
+                        <div class="body table-responsive">
+                           
+                            <table class="table table-striped">
+                                    <tr>
+                                         <th>Nom</th>
+                                         <th>Prenom</th>
+                                         <th>Email</th>
+                                         <th>Telephone</th>
+                                         
+                                    </tr>
+                                    <tr *ngFor="let i of etudiants 
+                              ">
+                                        <td ><span class="text-muted">{{i.firstName}}</span> </td>
+                                        <td ><span class="text-muted">{{i.lastName}}</span> </td>
+                                        <td ><span class="text-muted">{{i.email}}</span> </td>
+                                        <td ><span class="text-muted">{{i.phone}}</span> </td>
+                                       
+                                    </tr>
+                            </table> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+      
+      
+      
+     
+</body>
