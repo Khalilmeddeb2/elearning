@@ -1,0 +1,104 @@
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Modifier une classe 
+                        <small class="text-muted">Bienvenue à BrainNut </small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/backoffice"><i class="zmdi zmdi-home"></i>
+                                Directeur</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/DirecteurHomeCrech/classes">Classes</a></li>
+                        <li class="breadcrumb-item active">Modifier d'une classe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                                        <div class="card-body">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="nom" class="form-control" 
+                                                        placeholder="Entrez le nom de la classe"   [(ngModel)]="classe.nom"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.nom.errors }" />  
+
+                                                        <div *ngIf="submitted && fval_2.nom.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.nom.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                               
+                                            </div>
+                                               <!-- <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Matière
+                                                   </label>
+                                                <div *ngIf="matieres" class="col-sm-12 col-md-7">
+                                                    <select formControlName="matiere" class="form-control"  [ngClass]="{ 'is-invalid': submitted && fval_2.matiere.errors }">
+                                                        
+                                                        <option value="" disabled selected>Choisissez un matiere pour le nouvel utilisateur
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of matieres"  [value]="i._id" >{{i.nom}}</option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.matiere.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.matiere.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div>-->
+
+                                            
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Enseignants 
+                                                </label>
+                                                <div class="col-sm-12 col-md-7">   
+                                                <br>
+                                                <div *ngFor="let i of toutesenseignants" >
+                                                    <div >
+                                                    <input type="checkbox" (change)="i.selected = !i.selected" [checked]="i.selected" >
+                                                    <label  >{{i.firstName}}</label>
+                                                    </div> 
+                                                  </div>
+                                                  <br>
+                                                  <strong class="clas">la classe doit avoir au minumin un enseignant  </strong>
+                                                </div>
+                                               
+                                            </div>
+                                           
+                                            <br>
+                                            <br>
+                                            <div class="form-group row mb-4">
+                                                <label
+                                                    class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button  class="btn btn-primary" value="submit"
+                                                        type="submit">Modifier</button>
+                                                        <br>
+                                                        
+                                                </div>
+                                              
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</body>
+

@@ -1,0 +1,64 @@
+
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Listes des doucuments
+                        <small class="text-muted">Bienvenue à BrainNut </small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                   
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/EtudiantHome/{{ids}}"><i class="zmdi zmdi-home"></i>
+                            Etudiant</a>
+                        </li>
+                        
+                        <li class="breadcrumb-item active">Listes des doucuments</li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+       
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card product_item_list">
+                        <div class="body table-responsive">
+                           
+                            <table class="table table-striped">
+                                    <tr>
+                                         <th>Nom</th>
+                                         <th>Fichier</th>
+                                         <th>Matière</th>
+                                         <th>Enseiganant</th>
+                                         <th>Actions</th>
+                                         
+                                    </tr>
+                                    <tr *ngFor="let i of cours 
+                              ">
+                                        <td ><span class="text-muted">{{i.nom}}</span> </td>
+                                        <td ><span class="text-muted">{{i.originalname}}</span> </td>
+                                        <td ><span class="text-muted">{{i.matiere.nom}}</span> </td>
+                                        <td ><span class="text-muted">{{i.enseignant.email}}</span> </td>
+                                        <td> <button (click)="openFile(i.path,i._id)"  class="btn btn-default waves-effect waves-float waves-green"><i
+                                            class="zmdi zmdi-download"></i></button> </td>
+                                       
+                                    </tr>
+                            </table> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+      
+      
+      
+     
+</body>
