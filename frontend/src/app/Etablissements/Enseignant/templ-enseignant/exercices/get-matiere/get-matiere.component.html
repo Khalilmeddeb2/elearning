@@ -1,0 +1,191 @@
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Modifier un exercice
+                       
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/EnseignantHome"><i class="zmdi zmdi-home"></i>
+                            Enseignant</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/EnseignantHome/exercices">Exercices</a></li>
+                        <li class="breadcrumb-item active">Modifier d'un exercice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <form [formGroup]="registerForm"  >
+                                        <div class="card-body">
+                                            <!-- <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="nom" class="form-control" 
+                                                        placeholder="Entrez-le nom du cours"  [(ngModel)]="exercice.nom"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.nom.errors }"/>  
+
+                                                        <div *ngIf="submitted && fval_2.nom.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.nom.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                               
+                                            </div> -->
+                                               
+                                           
+                                           
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Matiere
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <div class="div">{{exercice.matiere.nom}}</div>
+                                                </div>
+                                                <button (click)="open2(content2)" class="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10"
+                         style="color: white !important;">
+                        <i class="zmdi zmdi-plus"></i>
+                      
+                    </button>
+                                            </div>
+
+                                           
+
+                                            
+
+                                          
+
+                                            <!-- <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Classes 
+                                                </label>
+                                                <div class="col-sm-12 col-md-7">   
+                                                    <br>
+                                                <div *ngFor="let i of toutesClasses" >
+                                                    <div >
+                                                    <input type="checkbox" (change)="i.selected = !i.selected" [checked]="i.selected" >
+                                                    <label class="check" >{{i.nom}}</label>
+                                                    </div>
+                                                  </div>
+                                                  <br>
+                                                  <strong class="enseg">l'enseignant doit avoir au minumin une matière  </strong>
+                                                </div>
+                                            </div>     -->
+
+                                            <!-- <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Questions 
+                                                </label>
+                                                <div class="col-sm-12 col-md-7">   
+                                                    <br>
+                                                <div *ngFor="let i of toutesQuestions" >
+                                                    <div >
+                                                    <input type="checkbox" (change)="i.selected = !i.selected" [checked]="i.selected" >
+                                                    <label class="check" >{{i.nom}}</label>
+                                                    </div>
+                                                  </div>
+                                                  <br>
+                                                  <strong class="enseg">l'enseignant doit avoir au minumin une matière  </strong>
+                                                </div>
+                                            </div>     -->
+
+
+
+                                            
+                                           
+                                           
+                                           
+                                            <br>
+                                            <br>
+                                            <div class="form-group row mb-4">
+                                                <label
+                                                    class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button  (click)="updateExercice(exercice._id)" class="btn btn-primary" value="submit"
+                                                        type="submit">Modifier</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ng-template #content2 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"> Choisir une matiére </h4>
+     
+    </div>
+    <div class="modal-body">
+      
+        <div class="form-group">
+            <div class="form-group row mb-4">
+                <h6 class="lb">Liste des matières :
+                </h6>
+                <!-- <div *ngFor="let i of matieres">
+                      <p>{{i.nom}}</p>
+                </div> -->
+                      
+                     <!-- <select   (change)="onChange2()"  >
+                        
+                        <option value="" disabled selected>choisissez la matière de ce cours 
+                            
+                        </option>
+                        <option *ngFor="let i of matieres"   [value]="i.selected" ><label>{{i.nom}}</label>  </option>
+                    </select> -->
+                      <br>
+                      <br>
+                     
+                    <div *ngFor="let i of matieres">
+                        <input  type="radio" id="fohtml" name="fav_language" value="HTML" (change)="onChange2();i.selected=!i.selected" [value]="i.selected" >
+                        <label  >{{i.nom}}</label>
+                      </div>
+                        
+                      
+                
+            </div>
+        </div>
+     
+    </div>
+    <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-outline-dark" (click)="addExercice()">Enregistrer</button>   -->
+      <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Annuler</button> -->
+    </div>
+  </ng-template>      

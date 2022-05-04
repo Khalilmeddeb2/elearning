@@ -1,0 +1,5 @@
+{ "email": "sami@gmail.com", "password":"Sami1234" }          -->directeur --> creche 
+{ "email": "mehdi@gmail.com", "password":"Mehdi1234" }          -->directeur --> creche 
+
+
+{ "email": "admin@gmail.com", "password":"admin" }    -->SuperAdmin

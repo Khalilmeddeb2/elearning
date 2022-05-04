@@ -1,0 +1,31 @@
+@import "../../assets/backoffice/plugins/bootstrap/css/bootstrap.min.css";
+@import "../../assets/backoffice/css/main.css";
+@import "../../assets/backoffice/css/authentication.css";
+@import "../../assets/backoffice/css/color_skins.css";
+
+::ng-deep .navbar-nav {
+  margin-top: 30px !important;
+  .website-link {
+    color: var(--dil-green) !important;
+  }
+  .btn-signup {
+    background-color: var(--dil-green) !important;
+    padding: 5px 22px !important;
+  }
+}
+
+::ng-deep body {
+  font-family: Avenir, sans-serif !important;
+  h5 {
+    font-weight: 600 !important;
+  }
+}
+::ng-deep .theme-cyan .checkbox input[type="checkbox"]:checked + label::after {
+  border: 1px solid #225e3b;
+  background-color: #44cc8830 !important;
+}
+::ng-deep .input-group-addon {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  border-radius: 0px 30px 30px 0px !important;
+}
