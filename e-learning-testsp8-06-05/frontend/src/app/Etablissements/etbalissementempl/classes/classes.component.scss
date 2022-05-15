@@ -1,0 +1,120 @@
+@import "../../../../assets/backoffice/plugins/bootstrap/css/bootstrap.min.css";
+@import "../../../../assets/backoffice/plugins/footable-bootstrap/css/footable.bootstrap.min.css";
+@import "../../../../assets/backoffice/plugins/footable-bootstrap/css/footable.standalone.min.css";
+@import "../../../../assets/backoffice/css/main.css";
+@import "../../../../assets/backoffice/css/ecommerce.css";
+@import "../../../../assets/backoffice/css/color_skins.css";
+@import "../../../../assets/backoffice/css/ecommerce.css";
+
+.zmdi-edit {
+  color: #FF8C00	 !important
+}
+.zmdi-delete {
+  color: #DC143C	 !important
+}
+.zmdi-search {
+  color: aliceblue;
+}
+
+.zmdi-eye{
+  color: #f9656b !important;;
+}
+
+::placeholder {
+  color: gray !important;
+  font-size: 15px;
+}
+
+
+// search 
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #61C0BF;
+  border: #61C0BF;
+}
+//
+.form-control{
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  box-shadow: none;
+  height: auto;
+  background-color: #e9ecef;
+  border: #e9ecef;
+  border-radius: 30px;
+  color: #2c2c2c;
+  line-height: normal;
+  font-size: .8571em;
+  position: relative;
+}
+//
+.block-header a {
+  color: var(--dil-green) !important;
+}
+
+.pagination.pagination-primary .page-item.active > .page-link,
+.pagination.pagination-primary .page-item.active > .page-link:focus,
+.pagination.pagination-primary .page-item.active > .page-link:hover {
+  background-color: var(--dil-green) !important;
+  border-color: var(--dil-green) !important;
+}
+
+.btn-primary {
+  background-color: var(--dil-green) !important;
+}
+
+tr {
+  cursor: pointer !important;
+}
+
+::ng-deep .btn,
+.navbar .navbar-nav > button.btn {
+  background-color: #fff !important;
+  color: black !important;
+}
+th {
+    
+    padding: 10px; font-style: normal;
+  font-size: large;
+  color: white;
+  background-color: #61C0BF;}
+
+  .alert.alert-success {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    font-size: 1rem
+  }
+  
+  .alert.alert-warning {
+  color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    font-size: 1rem
+  }
+  .alert.alert-danger {
+  color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    font-size: 1rem
+  }
+  
+  .alert {
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  position: relative;
+  margin-right: 900px;
+  }
+  .modal-footer>:not(:last-child)
+   { 
+ margin-right: 0.25rem; color: white !important;
+ background-color: #DC143C	 !important;
+  }
+  .modal-footer > :not(:first-child) 
+  { margin-left: 0.25rem; color: white !important;
+ background-color: #61C0BF	 !important; 
+}
+  

@@ -1,0 +1,34 @@
+version: '3.9' # We use version 3.5 syntax
+services: # Here we define our service(s)
+    frontend: # The name of the service
+      container_name: frontend  # Container name
+      build:
+        context: ./frontend
+      ports:
+        - '4200:4200' # Port mapping
+      command: >
+        bash -c "ng serve --host 0.0.0.0 --port 4200"
+    backend:
+      container_name: backend
+      restart: always
+      build: ./backend
+      ports:
+        - '3007:3007'
+      external_links:
+        - mongo
+    mongo:
+      container_name: mongo
+      image: mongo:4.0
+      ports:
+        - '27017:27017' 
+      volumes:
+        - './data:/data/db'  
+      # environment:
+      #   - MONGO_INITDB_ROOT_USERNAME= khalil
+      #   - MONGO_INITDB_ROOT_PASSWORD= khalil  
+      
+
+     
+         
+  
+ 

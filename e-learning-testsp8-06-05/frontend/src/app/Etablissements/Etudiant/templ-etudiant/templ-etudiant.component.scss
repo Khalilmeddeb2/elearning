@@ -1,0 +1,59 @@
+@import "../../../../assets/backoffice/plugins/bootstrap/css/bootstrap.min.css";
+@import "../../../../assets/backoffice/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css";
+@import "../../../../assets/backoffice/plugins/morrisjs/morris.min.css";
+@import "../../../../assets/backoffice/css/main.css";
+@import "../../../../assets/backoffice/css/color_skins.css";
+
+
+::ng-deep body,
+.navbar,
+.sidebar {
+  font-family: Avenir, sans-serif !important;
+}
+::ng-deep .navbar-nav > li > a   i {
+  color: white !important;
+}
+
+::ng-deep .theme-cyan .sidebar .menu .list li.active > :first-child i,
+.theme-cyan .sidebar .menu .list li.active > :first-child span {
+  color: var(--dil-green) !important;
+}
+::ng-deep .theme-cyan .sidebar .menu .list li:hover > :first-child i,
+.theme-cyan .sidebar .menu .list li:hover > :first-child span {
+  color: var(--dil-green) !important;
+}
+::ng-deep .theme-cyan .sidebar .menu .list a:hover {
+  color: var(--dil-green) !important;
+}
+::ng-deep .block-header h2 {
+  color: var(--dil-blue) !important;
+}
+::ng-deep .theme-cyan .card .header h2 strong {
+  color: var(--dil-green) !important;
+}
+::ng-deep .theme-cyan .card .header h2:before {
+  background: var(--dil-green) !important;
+}
+
+::ng-deep .logout {
+  cursor: pointer !important;
+}
+.navbar-left {
+  margin-top: 0% !important;
+}
+.navbar-right {
+  margin-top: 0% !important;
+}
+.sidebar .user-info .image img {
+  width: 120px !important;
+  box-shadow: none !important;
+}
+// le logo ici est centree 
+.navbar-header {
+  padding-left: 70px;
+}
+
+// forcer le couleur de navbar en orangee pas de bleu ciel
+.theme-cyan .navbar {
+  background: #f9656b !important;
+}

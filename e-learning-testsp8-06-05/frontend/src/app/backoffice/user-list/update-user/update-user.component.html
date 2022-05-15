@@ -1,0 +1,171 @@
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Modifier un utilisateur
+                        <small class="text-muted">Bienvenue à elearning Backoffice</small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/backoffice"><i class="zmdi zmdi-home"></i>
+                            SuperAdmin</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/backoffice/users">Utilisateurs</a></li>
+                        <li class="breadcrumb-item active">Modifier un utilisateur</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                                        <div class="card-body">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="firstName" class="form-control" 
+                                                        placeholder="Entrez le nom du l'utilisateur"  [(ngModel)]="user.firstName"                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.lastName.errors }" />  
+
+                                                        <div *ngIf="submitted && fval_2.lastName.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.lastName.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                               
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Prenom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="lastName" class="form-control" 
+                                                        placeholder="Entrez le prenom du l'utilisateur"  [(ngModel)]="user.lastName"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.lastName.errors }" />
+                                                       
+                                                        <div *ngIf="submitted && fval_2.lastName.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.lastName.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Email
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="email" formControlName="email" class="form-control" 
+                                                        placeholder="Entrez le l'adresse mail du l'utilisateur" [(ngModel)]="user.email"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.email.errors }" /> 
+
+                                                        <div *ngIf="submitted && fval_2.email.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.email.errors.required">Champs obligatoire</div>
+                                                            <div *ngIf="fval_2.email.errors.email">Merci de saisir une adresse email valide.
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Mot de passe
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="password" formControlName="password" class="form-control" 
+                                                        placeholder="vous pouvez changer le mot de passe du l'utilisateur" [(ngModel)]="user.password"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.password.errors }" />  
+                                                        
+                                                        <div *ngIf="submitted && fval_2.password.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.password.errors.pattern">Le Mot de passe de avoir au moinns 8 caractéres telque au moins un lettre minuscule
+                                                                et Lettre  majuscule et un chiffre
+                                                                
+                                                               </div>
+                                                            <div *ngIf="fval_2.password.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">phone
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input ng2TelInput type="text" (countryChange)="onCountryChange($event)"  formControlName="phone" class="form-control" 
+                                                        placeholder="Entrez le prenom du l'utilisateur"
+                                                       [ngClass]="{ 'is-invalid': submitted && fval_2.phone.errors }" style="width: 400%!important; padding-left: 50px!important;" />  
+                                                       
+                                                       <div *ngIf="submitted && fval_2.phone.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.phone.errors.required">Champs obligatoire</div>
+                                                        <div *ngIf="fval_2.phone.errors.pattern">Ce champs doit contenir seulement des
+                                                            chiffres.</div>
+                                                        <div *ngIf="fval_2.phone.errors.minLength">Ce champs doit contenir 9
+                                                            chiffres.</div>
+                                                    </div>
+                    
+                                                </div>
+                                            </div>
+
+                                            <div    class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Établissement
+                                                   </label>
+                                                <div *ngIf="roles" class="col-sm-12 col-md-7">
+                                                    <select formControlName="etablissement" class="form-control" [(ngModel)]="user.etablissement._id" [ngClass]="{ 'is-invalid': submitted && fval_2.etablissement.errors }">
+                                                        
+                                                        <option value="" disabled selected>changer l'établissement
+                                                            pour l'utilisateur 
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of etbalissements"  [value]="i._id" >{{i.firstName}}</option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.etablissement.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.etablissement.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+
+                                            <div  class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Rôle
+                                                   </label>
+                                                <div *ngIf="roles" class="col-sm-12 col-md-7">
+                                                    <select formControlName="role" class="form-control" [(ngModel)]="user.role._id" [ngClass]="{ 'is-invalid': submitted && fval_2.role.errors }">
+                                                        
+                                                        <option value="" disabled selected>changer le rôle
+                                                            pour l'utilisateur 
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of roles"  [value]="i._id" >{{i.type}}</option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.lastName.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.lastName.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+                                         
+                                           
+                                            <br>
+                                            <br>
+                                            <div class="form-group row mb-4">
+                                                <label
+                                                    class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button  class="btn btn-primary" value="submit"
+                                                        type="submit">Modifier</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+   
+</body>

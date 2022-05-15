@@ -1,0 +1,107 @@
+<html class="no-js ">
+
+<body class="theme-cyan authentication sidebar-collapse">
+    <!-- Navbar -->
+    <!--
+    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
+        <div class="container">
+           
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link  btn-round" href="https://www.voguelconsulting.com/">Website</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn-signup nav-link btn btn-primary btn-round" routerLink="/register">S'inscrire</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+         -->
+    <!-- End Navbar -->
+    <div class="page-header">
+         <!--
+        <div class="page-header-image"
+            style="background-image:url(assets/ELEARNING/login_ELEARNING.webp) !important; z-index: 0 !important;filter: blur(4px) !important;">
+        </div>
+          -->
+        <div class="container">
+            <div class="col-md-12 content-center">
+                <div class="card-plain">
+                    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSignIn()">
+                        <div class="header">
+                            <!--
+                            <div class="logo-container">
+                                <img src="assets/ELEARNING/logo ELEARNING site web.png" alt="">
+                            </div>
+                              -->
+                            <h5>Connexion</h5>
+                        </div>
+                        <div class="content">
+                            <div class="input-group input-lg">
+                                <input id="user" type="text" name="email" formControlName="email" required=""
+                                    aria-required="true" [ngClass]="{ 'is-invalid': submitted && fval_1.email.errors }"
+                                    class="form-control" placeholder="Entrez votre adresse email" />
+                                <span class="input-group-addon">
+                                    <i class="zmdi zmdi-account-circle"></i>
+                                </span>
+                                <div *ngIf="submitted && fval_1.email.errors" class="invalid-feedback">
+                                    <div *ngIf="fval_1.email.errors.required">Champs obligatoire</div>
+                                    <div *ngIf="fval_1.email.errors.email">Merci de saisir une adresse mail valide.
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="input-group input-lg">
+                                <input id="pass" type="password" name="password" formControlName="password"
+                                    [ngClass]="{ 'is-invalid': submitted && fval_1.password.errors }"
+                                    placeholder="Entrez votre mot de passe" class="form-control" />
+                                <span class="input-group-addon">
+                                    <i class="zmdi zmdi-lock"></i>
+                                </span>
+                                <div *ngIf="submitted && fval_1.password.errors" class="invalid-feedback">
+                                    <div *ngIf="fval_1.password.errors.required">Champs obligatoire</div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="footer text-center">
+                            <input type="submit" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light"
+                                style="background: linear-gradient(45deg, var(--dil-green), var(--dil-green)) !important;"
+                                value="Se connecter" [disabled]="loading">
+                            <!-- <a (click)="onSignIn()"
+                                class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light"
+                                style="background: linear-gradient(45deg, var(--dil-green), var(--dil-green)) !important;">SIGN IN</a> -->
+                            <h6 class="m-t-20"><a href="forgot-password.html" class="link">Mot de passe oublié?</a></h6>
+                        </div>
+
+                        <div  class="alert alert-danger" role="alert" *ngIf="error">
+                            {{eroorMessage}}
+                          </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+            </div>
+        </footer>
+    </div>
+    <script>
+        $(".navbar-toggler").on('click', function () {
+            $("html").toggleClass("nav-open");
+        });
+        //=============================================================================
+        $('.form-control').on("focus", function () {
+            $(this).parent('.input-group').addClass("input-group-focus");
+        }).on("blur", function () {
+            $(this).parent(".input-group").removeClass("input-group-focus");
+        });
+    </script>
+</body>
+
+</html>

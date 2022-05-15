@@ -1,0 +1,221 @@
+<body class="theme-cyan">
+    <div class="overlay"></div>
+
+    <!-- Top Bar -->
+    <nav class="navbar" style="background: linear-gradient(45deg, var(--dil-green), var(--dil-green));">
+        <div class="col-12">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" routerLink="/backoffice"><img src="assets\backoffice\images\logoBrain.jpg"
+                        width="100" alt="ELEARNING"></a>
+            </div>
+            <ul class="nav navbar-nav navbar-left">
+                <!-- <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i
+                            class="zmdi zmdi-swap"></i></a></li> -->
+                <!-- <li class="hidden-sm-down">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-search"></i>
+                        </span>
+                    </div>
+                </li> -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen"
+                        data-close="true"><i class="zmdi zmdi-fullscreen"></i></a>
+                </li>
+                <li><a class="logout mega-menu" (click)="logout()"><i class="zmdi zmdi-power"></i></a></li>
+                <!-- <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i
+                            class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar">
+        <div class="menu">
+            <ul class="list">
+                <li>
+                    <div class="user-info">
+                      
+                        <div class="detail">
+                            <h4 style="color: var(--dil-blue);">Enseignant</h4>
+                           
+                        </div>
+                       
+                    </div>
+                </li>
+                <br>
+                <!-- <li class="header">MAIN</li> -->
+                <li routerLinkActive="active open" [routerLinkActiveOptions]="{exact: true}"> <a
+                    routerLink="/EnseignantHome"><i
+                            class="zmdi zmdi-home"></i><span>Tableau de bord</span></a>
+                    <!-- <ul class="ml-menu">
+                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a
+                                routerLink="/EnseignantHome">Profil</a> </li>
+                    </ul> -->
+                </li>
+               
+                <!--
+                <li routerLinkActive="active open" [routerLinkActiveOptions]="{exact: true}"> <a
+                        href="javascript:void(0);" class="menu-toggle"><i
+                            class="zmdi zmdi-delicious"></i><span>Catégories</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li routerLinkActive="active open" [routerLinkActiveOptions]="{exact: true}"><a>Liste des
+                                catégories</a></li>
+                    </ul>
+                </li>
+                -->
+
+                
+                
+               
+
+                <!--
+                <li routerLinkActive="active open"> <a href="javascript:void(0);" class="menu-toggle"><i
+                            class="zmdi zmdi-local-activity"></i><span>Marques</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li routerLinkActive="active open" [routerLinkActiveOptions]="{exact: true}"><a>Liste des
+                                marques</a></li>
+                    </ul>
+                </li>
+                 -->
+                 <li routerLinkActive="active open"> <a routerLink="profil" ><i
+                    class="zmdi zmdi-account"></i><span>Profil</span>
+                </a>
+                <!-- <ul class="ml-menu">
+                   
+                <li routerLinkActive="active open" routerLink="profil" 
+                [routerLinkActiveOptions]="{exact: true}"><a>profil 
+                    </a></li>
+                
+                </ul> -->
+                
+                </li>
+                <li routerLinkActive="active open"> <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="zmdi zmdi-border-color"></i>
+               <span>Matières</span>
+            </a>
+            <ul class="ml-menu">
+                
+                <li routerLinkActive="active open" routerLink="matieres"
+                    [routerLinkActiveOptions]="{exact: true}"><a>Liste des
+                        matières</a></li>
+            </ul>
+              </li>
+                 
+                
+        <li routerLinkActive="active open"> <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="zmdi zmdi-calendar-note"></i>
+           <span>Classes </span>
+            </a>
+              <ul class="ml-menu">
+           
+              <li routerLinkActive="active open" routerLink="classes"
+                  [routerLinkActiveOptions]="{exact: true}"><a>Liste des
+                    classes</a></li>
+                       </ul>
+                        </li>
+
+        <li routerLinkActive="active open"> <a href="javascript:void(0);" class="menu-toggle"><i
+                class="zmdi zmdi-file"></i><span>Doucuments</span>
+        </a>
+        <ul class="ml-menu">
+
+            <li routerLinkActive="active open" routerLink="doucuments/addDoucument" 
+            [routerLinkActiveOptions]="{exact: true}"><a>Ajout d'un
+                doucument</a></li>
+            <li routerLinkActive="active open" routerLink="doucuments" 
+                [routerLinkActiveOptions]="{exact: true}"><a>Liste des
+                    doucuments</a></li>    
+        </ul>
+        
+    </li>
+
+    <li routerLinkActive="active open"> <a href="javascript:void(0);" class="menu-toggle"><i
+        class="zmdi zmdi-comment-edit"></i><span>Cours</span>
+</a>
+<ul class="ml-menu">
+
+    <li routerLinkActive="active open" routerLink="cours/CreateCours" 
+    [routerLinkActiveOptions]="{exact: true}"><a>Ajout d'un
+        cours</a></li>
+    <li routerLinkActive="active open" routerLink="cours" 
+        [routerLinkActiveOptions]="{exact: true}"><a>Liste des
+            cours</a></li>    
+</ul>
+
+</li>
+
+<!-- <li routerLinkActive="active open"> <a href="javascript:void(0);" class="menu-toggle"><i
+    class="zmdi zmdi-comment-edit"></i><span>Questions</span>
+</a>
+<ul class="ml-menu">
+
+<li routerLinkActive="active open" routerLink="" 
+[routerLinkActiveOptions]="{exact: true}"><a>Ajout d'un
+    question</a></li>
+<li routerLinkActive="active open" routerLink="questions" 
+    [routerLinkActiveOptions]="{exact: true}"><a>Liste des
+        questions</a></li>    
+</ul>
+
+</li> -->
+
+<li routerLinkActive="active open"> <a href="javascript:void(0);" class="menu-toggle"><i
+    class="zmdi zmdi-blur-linear"></i><span>Questions</span>
+</a>
+<ul class="ml-menu">
+<li routerLinkActive="active open" routerLink="questions/CreateQuestion"
+    [routerLinkActiveOptions]="{exact: true}"><a>Ajout d'une
+        question</a></li>
+<li routerLinkActive="active open" routerLink="questions"
+    [routerLinkActiveOptions]="{exact: true}"><a>Liste des
+        questions</a></li>
+</ul>
+</li>
+<li   routerLinkActive="active open"> <a href="javascript:void(0);" class="menu-toggle"><i
+    class="zmdi zmdi-collection-folder-image"></i><span>Exercices</span>
+</a>
+<ul class="ml-menu">
+    <li routerLinkActive="active open" routerLink="exercices/CreateExercice"
+    [routerLinkActiveOptions]="{exact: true}"><a>Ajout d'un
+        exercice</a></li>
+       
+<li routerLinkActive="active open" routerLink="exercices" 
+[routerLinkActiveOptions]="{exact: true}"><a>Liste des exercices 
+    </a></li>
+
+</ul>
+
+</li>
+
+
+<li  routerLinkActive="active open"> <a href="javascript:void(0);" class="menu-toggle"><i
+    class="zmdi zmdi-blur-linear"></i><span>Tests</span>
+</a>
+<ul class="ml-menu">
+<li routerLinkActive="active open" routerLink="tests/CreateTest"
+    [routerLinkActiveOptions]="{exact: true}"><a>Ajout d'un
+        test</a></li>
+<li routerLinkActive="active open" routerLink="tests"
+    [routerLinkActiveOptions]="{exact: true}"><a>Liste des
+        tests</a></li>
+</ul>
+</li>
+
+
+            </ul>
+        </div>
+    </aside>
+
+    <router-outlet></router-outlet>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+

@@ -1,0 +1,150 @@
+<body>
+    <section *ngIf= "statuts == false" class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Modifier un Test
+                       
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/EnseignantHome"><i class="zmdi zmdi-home"></i>
+                            Enseignant</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/EnseignantHome/tests">Tests</a></li>
+                        <li class="breadcrumb-item active">Modifier d'un test</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div   class="card">  
+                                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                                        <div class="card-body">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="nom" class="form-control" 
+                                                        placeholder="Entrez-le nom du cours"  [(ngModel)]="test.nom"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.nom.errors }"/>  
+
+                                                        <div *ngIf="submitted && fval_2.nom.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.nom.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                               
+                                            </div>
+                                               
+                                            <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description
+                                               </label>
+                                            <div class="col-sm-12 col-md-7">
+                                                <input type="text" formControlName="titre" class="form-control" 
+                                                    placeholder="Entrez-le nom du cours"  [(ngModel)]="test.titre"
+                                                    [ngClass]="{ 'is-invalid': submitted && fval_2.titre.errors }"/>  
+
+                                                    <div *ngIf="submitted && fval_2.titre.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.titre.errors.required">Champs obligatoire</div>
+                                                    </div>
+                                            </div>
+                                           
+                                        </div>
+                                           
+
+                                           
+                                            <div  class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Matieres
+                                                   </label>
+                                                <div *ngIf="matieres" class="col-sm-12 col-md-7">
+                                                    <select formControlName="matiere" class="form-control" (change)="onChangeMat()" [(ngModel)]="test.matiere._id" [ngClass]="{ 'is-invalid': submitted && fval_2.matiere.errors }">
+                                                        
+                                                        <option value="" disabled selected>choisissez la matière de ce cours
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of matieres"  [value]="i._id" >{{i.nom}}</option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.matiere.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.matiere.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+                                           
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Questions 
+                                                </label>
+                                                <div class="col-sm-12 col-md-7">   
+                                                    <br>
+                                                <div *ngFor="let i of toutesQuestions" >
+                                                    <div >
+                                                    <input type="checkbox" (change)="i.selected = !i.selected" [checked]="i.selected" >
+                                                    <label class="check" >{{i.nom}}</label>
+                                                    </div>
+                                                  </div>
+                                                  <!-- <br>
+                                                  <strong class="enseg">l'enseignant doit avoir au minumin une matière  </strong> -->
+                                                </div>
+                                            </div>    
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Classes 
+                                                </label>
+                                                <div class="col-sm-12 col-md-7">   
+                                                    <br>
+                                                <div *ngFor="let i of toutesClasses" >
+                                                    <div >
+                                                    <input type="checkbox" (change)="i.selected = !i.selected" [checked]="i.selected" >
+                                                    <label class="check" >{{i.nom}}</label>
+                                                    </div>
+                                                  </div>
+                                                  <!-- <br>
+                                                  <strong class="enseg">l'enseignant doit avoir au minumin une matière  </strong> -->
+                                                </div>
+                                            </div>    
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Temps
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="number" formControlName="temps" class="form-control" 
+                                                        placeholder="Entrez-la description du cours"  [(ngModel)]="test.temps" 
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.temps.errors }" />  
+    
+                                                        <div *ngIf="submitted && fval_2.temps.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.temps.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                               
+                                            </div>
+
+                                            
+                                            <br>
+                                            <br>
+                                            <div class="form-group row mb-4">
+                                                <label
+                                                    class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button  (click)="onSubmit()" class="btn btn-primary" value="submit"
+                                                        type="submit">Modifier</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</body>
+

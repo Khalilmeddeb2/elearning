@@ -1,0 +1,169 @@
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Ajout d'un nouvel enseignant
+                        <small class="text-muted">Bienvenue à BrainNut </small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/backoffice"><i class="zmdi zmdi-home"></i>
+                                Directeur</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/DirecteurHomeCrech/enseignants">Enseignants</a></li>
+                        <li class="breadcrumb-item active">Ajout d'un enseignant</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                                        <div class="card-body">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="firstName" class="form-control" 
+                                                        placeholder="Entrez le nom de l''enseignant"  
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.lastName.errors }" />  
+
+                                                        <div *ngIf="submitted && fval_2.lastName.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.lastName.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                               
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Prénom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="lastName" class="form-control" 
+                                                        placeholder="Entrez le prenom de l'enseignant"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.lastName.errors }" />
+                                                       
+                                                        <div *ngIf="submitted && fval_2.lastName.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.lastName.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Email
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="email" formControlName="email" class="form-control" 
+                                                        placeholder="Entrez le l'adresse mail de l'enseignant"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.email.errors }" /> 
+
+                                                        <div *ngIf="submitted && fval_2.email.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.email.errors.required">Champs obligatoire</div>
+                                                            <div *ngIf="fval_2.email.errors.email">Merci de saisir une adresse email valide.
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Mot de passe
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="password" formControlName="password" class="form-control" 
+                                                        placeholder="Entrez le Mot de passe de l'enseignant"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.password.errors }" />  
+                                                        
+                                                        <div *ngIf="submitted && fval_2.password.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.password.errors.pattern">Le Mot de passe de avoir au moinns 8 caractéres telque au moins un lettre minuscule
+                                                                et Lettre  majuscule et un chiffre
+                                                                
+                                                               </div>
+                                                               
+                                                            <div *ngIf="fval_2.password.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Numéro Téléphone
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input ng2TelInput id="tel" type="text" formControlName="phone" class="form-control" 
+                                                        placeholder="Entrez le numéro de l'enseignant"
+                                                       [ngClass]="{ 'is-invalid': submitted && fval_2.phone.errors }" />  
+                                                       
+                                                    <div *ngIf="submitted && fval_2.phone.errors" class="invalid-feedback-tel">
+                                                        <div *ngIf="fval_2.phone.errors.required">Champs obligatoire</div>
+                                                        <div *ngIf="fval_2.phone.errors.pattern">Ce champs doit contenir seulement des
+                                                            chiffres.</div>
+                                                            <div *ngIf="fval_2.phone.errors.minlength">Ce Chapms doit avoir au minumin 8 chiffres</div>
+                                                    </div>
+                    
+                                                </div>
+                                            </div>
+
+                                           <!-- <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Matière
+                                                   </label>
+                                                <div *ngIf="matieres" class="col-sm-12 col-md-7">
+                                                    <select formControlName="matiere" class="form-control"  [ngClass]="{ 'is-invalid': submitted && fval_2.matiere.errors }">
+                                                        
+                                                        <option value="" disabled selected>Choisissez un matiere pour le nouvel utilisateur
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of matieres"  [value]="i._id" >{{i.nom}}</option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.matiere.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.matiere.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div>-->
+
+                                            
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Matières 
+                                                </label>
+                                                
+                                                <div class="col-sm-12 col-md-7">  
+                                                    <br>
+                                                    <br>
+                                            <div *ngFor="let i of matieres" >
+                                                <input formControlName="matiere" type="checkbox" (change)="onChange()" [(ngModel)]="i.selected" >
+                                                <label  >{{i.nom}}</label>
+                                              </div>
+                                              </div>
+                                            </div>
+                                            <div  *ngIf= "show == false" >
+                                            
+                                                <p>Champs obligatoire</p>
+                                            </div>
+                                           
+                                            <br>
+                                            <br>
+                                            <div class="form-group row mb-4">
+                                                <label
+                                                    class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button  class="btn btn-primary" value="submit"
+                                                        type="submit">Ajouter</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</body>
