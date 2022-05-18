@@ -48,6 +48,9 @@ router.get('',verifyToken,async (req,res) => {
 router.post('',verifyToken,async (req,res) => {
     let role = new Role(lodashsh.pick(req.body,'type'));
     try {
+        //tx on peut les setters ici par id utlisateur 
+        req.io.emit('tx', "messange send");
+        console.log("req.io",req.io)
         role = await role.save();
     } catch (error) {
         res.status(400).send("Save in DB Error"+ error.message)

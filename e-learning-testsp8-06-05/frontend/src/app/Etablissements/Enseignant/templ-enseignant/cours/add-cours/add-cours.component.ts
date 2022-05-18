@@ -41,7 +41,15 @@ export class AddCoursComponent implements OnInit {
       nom: ['', Validators.required],     
       matiere:  ['', Validators.required],
       classe: ['', Validators.required],
-      file :[''],
+      //file :[''],
+      file: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(9),
+          Validators.pattern("[^\\s]+(.*?)\\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$"),
+        ],
+      ],
       //const regex pattern("[^\\s]+(.*?)\\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$");
       //policy_checked: [false, Validators.required],
     });
