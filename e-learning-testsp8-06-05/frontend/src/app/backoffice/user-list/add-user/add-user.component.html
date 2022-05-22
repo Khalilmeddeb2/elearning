@@ -95,8 +95,8 @@
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Numéro Téléphone
                                                    </label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input ng2TelInput (countryChange)="onCountryChange($event)" id="tel" type="text" formControlName="phone" class="form-control" 
-                                                        placeholder="Entrez le numéro Téléphone du l'utilisateur" style="width: 400%!important; padding-left: 50px!important;"
+                                                    <input ng2TelInput [ng2TelInputOptions]="{initialCountry: 'BE'}" (countryChange)="onCountryChange($event)" id="tel" type="text" formControlName="phone" class="form-control1" 
+                                                        placeholder="Entrez le numéro Téléphone du l'utilisateur" 
                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.phone.errors }"  />  
                                                        
                                                     <div *ngIf="submitted && fval_2.phone.errors" class="invalid-feedback-tel">

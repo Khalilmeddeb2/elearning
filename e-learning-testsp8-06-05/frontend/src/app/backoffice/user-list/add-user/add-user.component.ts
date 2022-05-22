@@ -20,7 +20,7 @@ export class AddUserComponent implements OnInit {
   returnUrl: string;
   roles : any;
   etbalissements :any;
-  countryCode;
+  countryCode="32";
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
