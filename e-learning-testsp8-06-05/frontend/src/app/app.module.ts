@@ -335,7 +335,7 @@ import { ListEnfantsComponent } from './Etablissements/Enseignant/templ-enseigna
   providers: [
     AuthGuard,
     Location,
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
+   
     {
       provide : HTTP_INTERCEPTORS,
       useClass : TokenInterceptorServiceService,
