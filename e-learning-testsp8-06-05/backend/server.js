@@ -80,6 +80,8 @@ const profilEnfant_router =require('./routes/profilsEnfants')
 //const parent_router =require('./routes/parents')
 //const actualite_router =require('./routes/actualites')
 //
+const notification_router =require('./routes/notifications')
+
 const multer = require('multer')
 
 require("./routes/user.routes")(app);
@@ -102,6 +104,7 @@ const normalizePort = (val) => {
 const port = normalizePort(process.env.PORT || "3007");
 app.set("port", port);
 // les apis 
+app.use('/api/notifications',notification_router);
 app.use('/api/roles',role_router);
 app.use('/api/etablissements',etablissement_router);
 app.use('/api/matieres',matiere_router);

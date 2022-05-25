@@ -21,13 +21,13 @@ nbreQuestions;
     ) { }
 
   ngOnInit(): void {
-    if (!localStorage.getItem('page_js')) {
-      localStorage.setItem('page_js', 'no reload');
-      location.reload();
-      console.log(localStorage.getItem('page_js'));
-    } else {
-      localStorage.removeItem('page_js');
-    }
+    // if (!localStorage.getItem('page_js')) {
+    //   localStorage.setItem('page_js', 'no reload');
+    //   location.reload();
+    //   console.log(localStorage.getItem('page_js'));
+    // } else {
+    //   localStorage.removeItem('page_js');
+    // }
     this.totalClasses();
     this.totalMatieres();
     this.totalCours()

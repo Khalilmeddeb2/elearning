@@ -3,6 +3,7 @@ const lodashsh = require('lodash');
 
 const NoteEtudiant = require('../models/noteEtudiant');
 const Test = require('../models/test');
+const Notification =require('../models/notification')
 const db = require("../config/db.config");
 const User = db.users;
 //const Demandecoach = require('../models/demandeCoach');
@@ -98,6 +99,7 @@ router.post('',verifyToken,async(req,res)=>{
 
     try {
         note= await note.save();
+        console.log('heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy tes')
         console.log('note',note)
     } catch (error) {
         return res.status(400).send("Error Store in DB : "+error.message)
@@ -130,7 +132,21 @@ router.get('/:id/update/:score',verifyToken,async (req,res)=>{
     note =new NoteEtudiant(lodashsh.pick(req.body,['enseignant','test','score']))   
     //note.score = 10;
     note = await note.save();
+
     console.log("score",note)
+    console.log("enseigant",note.test.enseignant._id)
+    let  CurentId=note.test.enseignant._id.toString();
+    let datao={id:CurentId,message:"eeeeeeee"}
+    req.io.emit('tx', datao);
+       // console.log("req.io",req.io)
+    
+    req.body.user=CurentId
+    req.body.message="salut a tous"
+    req.body.date =Date.now();
+    let notification = await new Notification(lodashsh.pick(req.body,['user','message','date'])) ;
+    notification =await notification.save();
+
+
     res.send(note)
 });
 

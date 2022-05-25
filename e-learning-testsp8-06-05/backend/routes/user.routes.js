@@ -149,7 +149,7 @@ router.post('',verifyToken,async (req,res)=>{
     req.body.password=hashedPassword
     req.body.role=roleEntrante
     req.body.etablissement=etablissementEntrante
-    let user = await new User(_.pick(req.body, ['firstName', 'lastName', 'email', 'password', 'phone','role','etablissement']))
+    let user = await new User(_.pick(req.body, ['firstName', 'lastName', 'email', 'password','confirmpassword','phone','role','etablissement']))
     email=req.body.email
     try {
         user.status = true

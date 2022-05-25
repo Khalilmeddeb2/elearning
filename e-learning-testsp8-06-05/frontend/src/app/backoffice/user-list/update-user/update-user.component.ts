@@ -5,7 +5,7 @@ import { User } from 'src/app/_models/user.model';
 import { EtablissementService } from 'src/app/_services/etablissement.service';
 import { RoleService } from 'src/app/_services/role.service';
 import { UserService } from 'src/app/_services/user.service';
-
+import { MustMatch } from 'src/app/_helpers/must-match.validator';
 @Component({
   selector: 'app-update-user',
   templateUrl: './update-user.component.html',
@@ -80,10 +80,16 @@ export class UpdateUserComponent implements OnInit {
         ],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.pattern('((?=)(?=.*[a-z])(?=.*[A-Z]).{8,})'),]],
+        confirmpassword: ['', [Validators.pattern('((?=)(?=.*[a-z])(?=.*[A-Z]).{8,})'),]],
         role:  ['', Validators.required],
         etablissement :  ['', Validators.required],
         //policy_checked: [false, Validators.required],
-      });
+      },
+
+      {
+        validator: MustMatch('password', 'confirmpassword')
+    }
+      );
       
      })
     

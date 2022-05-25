@@ -35,7 +35,8 @@
                   <p class="text-secondary mb-1">{{user.role.type}}</p>
                   <p class="text-muted font-size-sm">{{user.email}}</p>
                   <br>
-                  <button (click)="updateProfilePhoto(user._id)" class="btn0">Modifier votre photo de profil </button>
+                  <button *ngIf="length == 0" (click)="updateProfilePhoto(user._id)" class="btn0">Ajouter une photo de profil </button>
+                  <button *ngIf="length > 0" (click)="updateProfilePhoto(user._id)" class="btn0">Modifier votre photo de profil </button>
                  
                 </div>
               </div>
