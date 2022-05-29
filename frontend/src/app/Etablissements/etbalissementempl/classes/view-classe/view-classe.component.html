@@ -1,0 +1,94 @@
+
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>classe : {{classe.nom}}
+                        <small class="text-muted">Bienvenue à BrainNut </small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <button (click)="updateClasse(id)" class="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10"
+                        style="color: white !important;">
+                        <i class="zmdi zmdi-edit"></i>
+                    </button>
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/backoffice"><i class="zmdi zmdi-home"></i>
+                                Directeur</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/DirecteurHomeCrech/classes">Classes</a></li>
+                        <li class="breadcrumb-item active">{{classe.nom}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card product_item_list">
+                        <div class="body table-responsive">
+                        <h4>Listes des enseignants</h4>
+                            <table class="table table-striped">
+                                    <tr>
+                                         <th>Nom</th>
+                                         <th>Prenom</th>
+                                         <th>Email</th>
+                                         <th>Telephone</th>
+                                         <th >Etat</th>
+                                    </tr>
+                                    <tr *ngFor="let i of enseignants">
+                                        <td ><span class="text-muted">{{i.firstName}}</span> </td>
+                                        <td ><span class="text-muted">{{i.lastName}}</span> </td>
+                                        <td ><span class="text-muted">{{i.email}}</span> </td>
+                                        <td ><span class="text-muted">{{i.phone}}</span> </td>
+                                        <td ><strong class="text-muted">{{i.etat}}</strong> </td>
+                                    </tr>
+                            </table> 
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card product_item_list">
+                        <div class="body table-responsive">
+                           <h4>Listes des étudiants</h4>
+                            <table class="table table-striped">
+                                    <tr>
+                                         <th>Nom</th>
+                                         <th>Prenom</th>
+                                         <th>Email</th>
+                                         <th>Telephone</th>
+                                         <th >Etat</th>
+                                    </tr>
+                                    <tr *ngFor="let i of etudiantsResults 
+                              ">
+                                        <td ><span class="text-muted">{{i.firstName}}</span> </td>
+                                        <td ><span class="text-muted">{{i.lastName}}</span> </td>
+                                        <td ><span class="text-muted">{{i.email}}</span> </td>
+                                        <td ><span class="text-muted">{{i.phone}}</span> </td>
+                                        <td ><strong class="text-muted">{{i.etat}}</strong> </td>
+                                    </tr>
+                            </table> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+      
+      
+      
+     
+</body>
+
+
+

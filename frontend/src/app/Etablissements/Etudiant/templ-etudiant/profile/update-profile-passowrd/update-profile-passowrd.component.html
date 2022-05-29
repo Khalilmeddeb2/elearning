@@ -1,0 +1,122 @@
+
+    <body>
+        <section class="content ecommerce-page">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 col-sm-12">
+                        <h2>Changer votre mot de passe
+                            <!-- <small class="text-muted">Bienvenue à elearning Backoffice</small> -->
+                        </h2>
+                    </div>
+                    <!-- <div class="col-lg-5 col-md-6 col-sm-12">
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a routerLink="/backoffice"><i class="zmdi zmdi-home"></i>
+                                SuperAdmin</a>
+                            </li>
+                            <li class="breadcrumb-item active"><a routerLink="/backoffice/users">Utilisateurs</a></li>
+                            <li class="breadcrumb-item active">Modifier un utilisateur</li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="main-content">
+                    <section class="section">
+                        <div class="section-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                                            <div class="card-body">
+                                               
+    
+                                               
+    
+                                              
+    
+                                                <div class="form-group row mb-4">
+                                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ancien mot de passe 
+                                                       </label>
+                                                    <div class="col-sm-12 col-md-7">
+                                                        <input type="password" formControlName="password" class="form-control" 
+                                                            placeholder="Saisir votre ancien mot de passe" [(ngModel)]="user2.password"
+                                                            [ngClass]="{ 'is-invalid': submitted && fval_2.password.errors }" />  
+                                                            
+                                                            <div *ngIf="submitted && fval_2.password.errors" class="invalid-feedback">
+                                                                <div *ngIf="fval_2.password.errors.pattern">Le Mot de passe de avoir au moinns 8 caractéres telque au moins un lettre minuscule
+                                                                    et Lettre  majuscule et un chiffre
+                                                                    
+                                                                   </div>
+                                                                <div *ngIf="fval_2.password.errors.required">Champs obligatoire</div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row mb-4">
+                                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nouveau mot de passe
+                                                       </label>
+                                                    <div class="col-sm-12 col-md-7">
+                                                        <input type="password" formControlName="newpassword" class="form-control" 
+                                                            placeholder="Saisir votre nouveau mot de passe" 
+                                                            [ngClass]="{ 'is-invalid': submitted && fval_2.newpassword.errors }" />  
+                                                            
+                                                            <div *ngIf="submitted && fval_2.newpassword.errors" class="invalid-feedback">
+                                                                <div *ngIf="fval_2.newpassword.errors.pattern">Le Mot de passe de avoir au moinns 8 caractéres telque au moins un lettre minuscule
+                                                                    et Lettre  majuscule et un chiffre
+                                                                    
+                                                                   </div>
+                                                                <div *ngIf="fval_2.newpassword.errors.required">Champs obligatoire</div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row mb-4">
+                                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Confirmer le mot de passe
+                                                       </label>
+                                                    <div class="col-sm-12 col-md-7">
+                                                        <input type="password" formControlName="confirmpassword" class="form-control" 
+                                                            placeholder="Confirmer votre nouveau mot de passe "
+                                                            [ngClass]="{ 'is-invalid': submitted && fval_2.confirmpassword.errors }" />  
+                                                            
+                                                            <div *ngIf="submitted && fval_2.confirmpassword.errors" class="invalid-feedback">
+                                                                <div *ngIf="fval_2.confirmpassword.errors.pattern">Le Mot de passe de avoir au moinns 8 caractéres telque au moins un lettre minuscule
+                                                                    et Lettre  majuscule et un chiffre
+                                                                    
+                                                                   </div>
+                                                                <div *ngIf="fval_2.confirmpassword.errors.required">Champs obligatoire</div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+    
+    
+    
+                                              
+                                               
+                                                <br>
+                                                <br>
+                                                <div class="form-group row mb-4">
+                                                    <label
+                                                        class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                    <div class="col-sm-12 col-md-7">
+                                                        <button  class="bt1" value="submit"
+                                                            type="submit">Modifier</button>
+                                                            <button (click)="back()" class="bt2" value="submit"
+                                                            type="submit">Annuler</button>    
+                                                            
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+       
+    </body>
+    
+    

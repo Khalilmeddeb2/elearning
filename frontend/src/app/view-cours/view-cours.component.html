@@ -1,0 +1,59 @@
+<body>
+    
+    <section class="content ecommerce-page"  style="background-color: #edecec;
+    ">
+    
+        <!-- <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Modifier un doucument
+                        <small class="text-muted">Bienvenue à BrainNut </small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/EnseignantHome"><i class="zmdi zmdi-home"></i>
+                            Enseignant</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/EnseignantHome/doucuments">Doucuments</a></li>
+                        <li class="breadcrumb-item active">Modifier d'un doucument</li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+        <button class="c" (click)="makePDF(id)" type="button">Télécharger</button>
+        <div  class="container-fluid">
+            <br>
+            <br>
+           
+            <div class="main-content">
+                <section  id="content" #content class="section">
+
+                    <div  class="section-body">
+                        <div class="container mt-5">
+                            <!-- <div class="buttons"> <button (click)="makePDF()" type="button">Message</button> <button class="btn btn-primary px-4 ms-3">Contact</button> </div> -->
+                            <div class="row d-flex justify-content-center">
+                                <!-- <div class="buttons"> <button (click)="makePDF()" type="button">Message</button> <button class="btn btn-primary px-4 ms-3">Contact</button> </div> -->
+
+                                <div class="col-md-7">
+                                    <div class="card p-3 py-4">
+                                        <!-- <div class="text-center"> <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle"> </div> -->
+                                        <div class="text-center mt-3"> <span class="bg-secondary p-1 px-4 rounded text-white">{{cours.matiere.nom}}</span><br>
+                                            <h5>{{cours.date| date: 'yyyy-MM-dd'}} </h5>
+                                            <h4 class="mt-2 mb-0">{{cours.enseignant.firstName}} {{cours.enseignant.lastName}}</h4> <span class="ri">{{cours.nom}}</span><br><br>
+                                            <div [innerHTML]="contenu" >
+                                               
+                                            </div>
+                                           
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</body>

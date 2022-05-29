@@ -1,0 +1,110 @@
+<!-- Main Content -->
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Tableau de bord
+                    <!-- <small class="text-muted">Bienvenue à BrainNut </small> -->
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a routerLink="/EtudiantHome/{{ids}}"><i class="zmdi zmdi-home"></i>
+                            Etudiant</a>
+                    </li>
+                    <li class="breadcrumb-item active">Tableau de bord</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="card widget_2">
+            <ul class="row clearfix list-unstyled m-b-0">
+                <li class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="m-t-0">Documents</h5>
+                                <p class="text-small">Nombre des documents </p>
+                            </div>
+                            <div class="col-5 text-right">
+                                <h2 class="color1">{{nbreDoucuments}}</h2>
+
+                            </div>
+                          
+                            <div class="col-12">
+                                <div class="progress m-t-20">
+                                    
+                                    <div class="progress-bar l-amber" role="progressbar" aria-valuenow="45"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="m-t-0">Cours </h5>
+                                <p class="text-small">Nombre des cours</p>
+                            </div>
+                            <div class="col-5 text-right">
+                                <h2 class="color2">{{nbreCours}}</h2>
+                                
+                            </div>
+                            <div class="col-12">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-blue" role="progressbar" aria-valuenow="38"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 38%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="m-t-0">Exercices</h5>
+                                <p class="text-small">Nombre des exercices</p>
+                            </div>
+                            <div class="col-5 text-right">
+                                <h2 class="color3">{{nbreExercices}}</h2>
+                                
+                            </div>
+                            <div class="col-12">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-parpl" role="progressbar" aria-valuenow="39"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 39%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="m-t-0">Tests</h5>
+                                <p class="text-small">Nombre total des tests</p>
+                            </div>
+                            <div class="col-5 text-right">
+                                <h2 class="color4">{{nbreTests}}</h2>
+                               
+                            </div>
+                            <div class="col-12">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-turquoise" role="progressbar" aria-valuenow="89"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 89%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+       
+    </div>
+</section>

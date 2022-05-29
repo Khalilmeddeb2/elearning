@@ -1,0 +1,247 @@
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Modifier une question 
+                        <!-- <small class="text-muted">Bienvenue à BrainNut </small> -->
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/EnseignantHome"><i class="zmdi zmdi-home"></i>
+                            Enseignant</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/EnseignantHome/questions">Questions</a></li>
+                        <li class="breadcrumb-item active">Modifier une question</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <form [formGroup]="registerForm"   >
+                                        <div class="card-body">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="nom" class="form-control" 
+                                                        placeholder="Entrez le nom de cette question " [(ngModel)]="question.nom" 
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.nom.errors }" />  
+  
+                                                        <div *ngIf="submitted && fval_2.nom.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.nom.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                               
+                                            </div>
+  
+                                            <div class="form-group row mb-4">
+                                              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Question
+                                                 </label>
+                                              <div class="col-sm-12 col-md-7">
+                                                  <input type="text" formControlName="question" class="form-control" 
+                                                      placeholder="Entrez la question  "  [(ngModel)]="question.question" 
+                                                      [ngClass]="{ 'is-invalid': submitted && fval_2.question.errors }" />  
+  
+                                                      <div *ngIf="submitted && fval_2.question.errors" class="invalid-feedback">
+                                                          <div *ngIf="fval_2.question.errors.required">Champs obligatoire</div>
+                                                      </div>
+                                              </div>
+                                             
+                                          </div>
+  
+                                          <!-- <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Anciens Choix
+                                               </label>
+                                               
+                                            <div class="col-sm-12 col-md-7">
+                                                <h6 style="color: white;">zezezezezezezezeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h6>
+                                                <table class="t"> 
+                                                    <tr class="th">
+                                        
+                                                        <th >Numéro</th>
+                                                        <th >Option</th>
+                                                       
+                                                   </tr>
+                                              
+                                               
+                                                   <tr *ngFor="let i of results" >
+                                                       
+                                                      
+                                                       <td ><strong class="text-muted">{{i.numero}}</strong> </td>
+                                                       <td ><strong class="text-muted">{{i.text}}</strong> </td>
+                                                </table>
+                                            </div> 
+                                          </div>   
+                                          
+                                          <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ancien réponse
+                                               </label>
+                                            <div class="col-sm-12 col-md-7">
+
+                                               <p class="p"> {{question.answer}} </p>
+                                            </div>
+                                           
+                                        </div> -->
+<!--   
+                                          <div class="form-group row mb-4">
+                                            <table  >
+                                                <tr>
+                                                  <th >choix</th>
+                                                  <th ><button type="button" (click)="addQuantity()" class="btn btn-primary"><i class="zmdi zmdi-plus"></i></button></th>
+                                                </tr>
+                                                <tr *ngFor="let i of results">
+                                                  <td>
+                                                      Numero :{{i.numero}}
+                                                      <input type="text" placeholder="Entrez-la question " [(ngModel)]="i.numero"   class="form-control"  >
+
+                                 
+                                                     
+                                                  </td>
+                                                  <td>
+                                                      Text :{{i.text}}
+                                                      <input type="text" placeholder="Entrez-la question " [(ngModel)]="i.text"   class="form-control"  >
+
+                                                  </td>
+                                                  <td>
+                                                    <button type="button" (click)="removeQuantity(i)" class="btn btn-default"><i class="zmdi zmdi-delete"></i></button>
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                        </div> -->
+  
+                                         
+                                        <!-- <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Reponses Ancien
+                                               </label>
+                                            <div class="col-sm-12 col-md-7">
+                                                <input type="text" formControlName="answer" class="form-control" 
+                                                    placeholder="Entrez-la question "  [(ngModel)]="question.answer" 
+                                                    [ngClass]="{ 'is-invalid': submitted && fval_2.answer.errors }" />  
+
+                                                    <div *ngIf="submitted && fval_2.answer.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.answer.errors.required">Champs obligatoire</div>
+                                                    </div>
+                                            </div>
+                                            </div> -->
+  
+                                            
+                                         
+  
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Matière
+                                                   </label>
+                                                <div *ngIf="matieres" class="col-sm-12 col-md-7">
+  
+                                                    <select formControlName="matiere" class="form-control"  [(ngModel)]="question.matiere._id"  [ngClass]="{ 'is-invalid': submitted && fval_2.matiere.errors }">
+                                                        
+                                                        <option value="" disabled selected>choisissez la matière de cette question 
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of matieres"  [value]="i._id" >{{i.nom}}</option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.matiere.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.matiere.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+  
+  
+                                   
+                                            <!-- <div class="c">
+                                                <label class="co" >
+                                                    <input
+                                                        type="checkbox"
+                                                        formControlName="checkbox"
+                                                        unchecked
+                                                        (change)="updateState()">
+                                                      Si Vous voulez changer les choix et la reponse  
+                                                      </label>
+                                               </div> -->
+  
+                                          
+                                               <!-- *ngIf="showFootNote" -->
+
+                                               <div  class="form-group row mb-4">
+                                                <table  formArrayName="choix">
+                                                    <tr>
+                                                      <th >Choix</th>
+                                                      <th ><button type="button" (click)="addQuantity()" class="btn btn-primary"><i class="zmdi zmdi-plus"></i></button></th>
+                                                    </tr>
+                                                    <tr *ngFor="let quantity of choix().controls; let i=index" [formGroupName]="i">
+                                                   
+                                                      <td>
+                                                         
+                                                          <input type="text" placeholder="Entrez-la question "  formControlName="text" class="form-control"  (change)="onChange()"  >
+                                                      </td>
+                                                      <td>
+                                                        <button type="button" (click)="removeQuantity(i)" class="btn btn-default"><i class="zmdi zmdi-delete"></i></button>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                            </div>
+                                           
+                                            <!-- <div  class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Reponses
+                                                   </label>
+                                                <div *ngIf="matieres" class="col-sm-12 col-md-7">
+    
+                                                    <select formControlName="answer" class="form-control"   [ngClass]="{ 'is-invalid': submitted && fval_2.answer.errors }">
+                                                        
+                                                        <option value="" disabled selected>choisissez la reponses de ce question 
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of reponses"  [value]="i.text" >{{i.text}}</option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.answer.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.answer.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div> -->
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Réponses
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="answer" class="form-control" 
+                                                        placeholder="choisissez la réponse  "  [(ngModel)]="question.answer" 
+                                                       />  
+    
+                                                        <!-- <div *ngIf="submitted && fval_2.answer.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.question.answer.required">Champs obligatoire</div>
+                                                        </div> -->
+                                                </div>
+                                               
+                                            </div>
+
+                                            <br>
+                                            <br>
+                                            <div class="form-group row mb-4">
+                                                <label
+                                                    class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button (click)="onSubmit()" class="btn btn-primary" value="submit"
+                                                        type="submit">Modifier</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+  </body>

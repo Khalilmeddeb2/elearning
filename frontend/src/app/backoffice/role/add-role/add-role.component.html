@@ -1,0 +1,68 @@
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Ajout d'un nouveau rôle
+                        <!-- <small class="text-muted">Bienvenue à BrainNut </small> -->
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/backoffice"><i class="zmdi zmdi-home"></i>
+                            SuperAdmin</a>
+                        </li>
+                        <li class="breadcrumb-item"><a routerLink="/backoffice/roles">Rôles</a></li>
+                        <li class="breadcrumb-item active">Ajout d'un rôle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <form  enctype="multipart/form-data">
+                                        <div class="card-body">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Type
+                                                    du
+                                                    rôle</label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" class="form-control"  name="type"
+                                                        placeholder="Entrez le type du role"  [(ngModel)]="role.type">
+                                                </div>
+                                            </div>
+                                          
+                                         
+                                           
+                                          
+                                          
+                                           
+                                          
+                                           
+                                            <div class="form-group row mb-4">
+                                                <label
+                                                    class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button (click) = "onSubmit()" class="btn btn-primary" value="submit"
+                                                        type="submit">Ajouter</button>
+                                                
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    
+
+</body>

@@ -1,0 +1,162 @@
+<section class="content ecommerce-page">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <!-- <h2>Passer QCM
+                   
+                </h2> -->
+            </div>
+            <!-- <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a routerLink="/EtudiantHome"><i class="zmdi zmdi-home"></i>
+                        Enseignant</a>
+                    </li>
+                    <li class="breadcrumb-item active"><a routerLink="/EtudiantHome/exercices">Exercices</a></li>
+                    <li class="breadcrumb-item active">Passer QCM</li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="main-content">
+            <section class="section">
+                <div class="section-body">
+                  <div class="container">
+                    <h3 style="text-align:center">
+                        Bienvenue pour passer votre test  &#x263A;
+                        
+                    </h3>
+                    <div class="card" [hidden]="isQuestionCardShow">
+                      <div class="card-body">
+                        <h5 class="card-title" style="text-align:center">Choisissez l'option  &#x263A; </h5>
+                        <br>
+                        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                        <div class="row justify-content-md-center">
+                         
+                          <div class="col-sm-12 col-lg-3">
+                            <button class="btn" style=" background-color: #053b6e !important;" (click)="startQuiz()">
+                              Passer QCM </button>
+                          </div>
+                          <div class="col-sm-12 col-lg-3">
+                            <button class="btn btn-default" (click)="close1()" >
+                              Retourner </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div *ngIf="status == true" >
+                     <h1>{{message}}</h1>
+                     </div>    -->
+  
+                     <!-- <div  class="alert alert-danger" role="alert" *ngIf="status == true">
+                      <div class="c1" >{{message}}</div>
+                    </div> -->
+  
+  
+                    <!-- <div *ngIf="verifTest == false" class="card" [hidden]="!isQuestionCardShow"> -->
+                      <div  class="card" [hidden]="!isQuestionCardShow">
+                      <div class="card-body">
+                        <div *ngIf="enzelReponse == false">
+                        <div class="timer">
+                              {{counter}} Minutes <i style="font-size:20px" class="fa">&#xf017;</i>
+  
+                        </div>
+                        <label class="titre"><b>{{test.titre}}</b></label>
+                        <br>
+                        <form #questionTest="ngForm" novalidate>
+                          <div *ngFor="let exec of questions">
+                            <div>{{exec.question}}</div>
+                           
+                            <div  class="form-group row">
+                              <!-- <label class="col-md-3 col-form-label"><b>Cochez la bonne réponse</b></label> -->
+                              <div *ngIf="questions" class="col-md-9 col-form-label">
+                                <div *ngFor="let choix of exec.choix" class="form-check form-check-inline mr-1">
+                                  <input class="form-check-input"  type="checkbox" (change)="choix.selected = !choix.selected" [checked]="choix.selected"> 
+                                  <label class="form-check-label">{{choix.numero}}) {{choix.text}} </label>
+                                </div>
+                                </div>
+                                </div>
+                           
+                            <hr>
+                          </div>
+                        </form>
+                        </div>
+                         
+                        <div *ngIf="enzelReponse == true">
+                          <label class="titre"><b>Réponses :</b></label>
+                          <br>
+                          <form #questionTest="ngForm" novalidate>
+                            <div *ngFor="let exec of questions">
+                              <div><b class="b">Question:</b>{{exec.question}}</div>
+                               <br>
+                              <div><b class="b">Bonne réponse:</b><b class="pColorReponse">{{exec.answer}}</b></div> 
+                             
+                              <hr>
+                            </div>
+                          </form>
+                          </div>
+
+                        <br><br>
+                        <div class="row">
+                          <div class="col-12" style="justify-content: center;display: flex;">
+                            <button type="button" class="btn btn-default" (click)="close1()" style="margin-right: 30px;">Retourner</button>
+                            <button *ngIf="enzelReponse == false" type="button" class="btn btn-primary" id="pres" (click)="open2(content2)">Enregistrer
+                              <ng-template #content2 let-modal style="width: 100%!important;">
+                               
+                                      <div class="modal-body text-center" style="color: #196f77;">
+                                <h4>Nombre total de Questions: {{questions.length}} </h4>
+                                <h4>
+                                  Nombre total de réponses: {{totalAnswered}}
+                                </h4>
+                                <h4>
+                                  Nombre des réponses justes : {{rightAnswer}}
+                                </h4>
+                                <h4>
+                                  Votre score est : {{score}} %
+                                </h4>
+                                <br>
+                                <span>
+                                    <button type="button" class="btn btn-primary" (click)="reponses()" style="margin-right: 17px;background-color: #196f77;"> Réponses
+                                        <ng-template #content3 let-modal style="width: 200%!important;">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-body text-center" style="color: #196f77;">
+                                                <div *ngFor="let exec of questions">
+                                                  <div>{{exec.question}}</div>
+                                                  <div>Bonne réponse: {{exec.answer}}</div>
+                                                  <!-- <div>nbn Answer: {{exec.choix}}</div> -->
+                                                <!-- <div *ngFor="let choix of exec.choix" [style.color]="!choix.selected? '#ffc107' : choix.selected == exec.answer ? 'green': 'red'"> -->
+                                                  
+                                                  <!-- <div> your  Answer: {{exec.choix.selected}}</div> -->
+                                                  <!-- <div>Right Answer: {{choix.answer}}) {{choix[choix.answer]}}</div> -->
+                                                  <hr>
+                                                </div>
+                                                </div>
+                                                <!-- </div> -->
+                                                <button type="button" class="btn btn-default" (click)="close()" style="margin-left: 17px;background-color: red;">Fermer</button>
+                                              </div>
+                                            <!-- </div> -->
+                                            <!-- /.modal-content -->
+                                          </div>
+                                          </ng-template>
+                                      </button>
+                                </span>    
+                                     
+                                <button type="button" class="btn btn-default" (click)="close()" style="margin-left: 17px;background-color: red;">Fermer</button>
+  
+                                 
+                               </div>
+                              </ng-template>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </section>
+  
+  

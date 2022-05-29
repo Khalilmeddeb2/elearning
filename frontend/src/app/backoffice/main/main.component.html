@@ -1,0 +1,137 @@
+<!-- Main Content -->
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Tableau de bord
+                    <!-- <small class="text-muted">Bienvenue à BrainNut </small> -->
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a routerLink="/backoffice"><i class="zmdi zmdi-home"></i>
+                            SuperAdmin</a>
+                    </li>
+                    <li class="breadcrumb-item active">Tableau de bord</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="card widget_2">
+            <ul class="row clearfix list-unstyled m-b-0">
+                <li class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="m-t-0">Rôles</h5>
+                                <p class="text-small">Nombre des rôles </p>
+                            </div>
+                            <div class="col-5 text-right">
+                                <h2 class="color1">{{nbreRoles}}</h2>
+
+                            </div>
+                          
+                            <div class="col-12">
+                                <div class="progress m-t-20">
+                                    
+                                    <div class="progress-bar l-amber" role="progressbar" aria-valuenow="45"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="m-t-0">Établissements </h5>
+                                <p class="text-small">Nombre des établissements</p>
+                            </div>
+                            <div class="col-5 text-right">
+                                <h2 class="color2">{{nbreEtablissements}}</h2>
+                                
+                            </div>
+                            <div class="col-12">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-blue" role="progressbar" aria-valuenow="38"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 38%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="m-t-0">Directeurs</h5>
+                                <p class="text-small">Nombre des directeurs</p>
+                            </div>
+                            <div class="col-5 text-right">
+                                <h2 class="color3">{{nbreDirecteurs}}</h2>
+                                
+                            </div>
+                            <div class="col-12">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-parpl" role="progressbar" aria-valuenow="39"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 39%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="m-t-0">Utilisateurs</h5>
+                                <p class="text-small">Nombre des utilisateurs</p>
+                            </div>
+                            <div class="col-5 text-right">
+                                <h2 class="color4">{{nbreUtlisateurs}}</h2>
+                               
+                            </div>
+                            <div class="col-12">
+                                <div class="progress m-t-20">
+                                    <div class="progress-bar l-turquoise" role="progressbar" aria-valuenow="89"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 89%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                <ul class="row profile_state list-unstyled" >
+                    <li class="col-lg-4 col-md-3 col-6" routerLink="roles/addRole">
+                        <div class="body">
+                            <i class="zmdi zmdi-account-circle col-amber"></i>
+                            <h4>Ajout d'un rôle</h4>
+                            <!-- <span>Post View</span> -->
+                        </div>
+                    </li>
+                    <li class="col-lg-4 col-md-3 col-6" routerLink="etablissements/addEtablissement">
+                        <div class="body">
+                            <i class="zmdi zmdi-hotel col-blue"></i>
+                            <h4>Ajout d'un établissement</h4>
+                        </div>
+                    </li>
+                    <li class="col-lg-4 col-md-3 col-6" routerLink="users/addUser">
+                        <div class="body">
+                            <i class="zmdi zmdi-accounts-alt col-red"></i>
+                            <h4>Ajout d'un utilisateur</h4>
+                        </div>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+       
+
+    </div>
+</section>

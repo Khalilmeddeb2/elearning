@@ -1,0 +1,170 @@
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Ajout d'un nouveau test
+                        <!-- <small class="text-muted">Bienvenue à BrainNut </small> -->
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/EnseignantHome"><i class="zmdi zmdi-home"></i>
+                            Enseignant</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/EnseignantHome/tests">Tests</a></li>
+                        <li class="breadcrumb-item active">Ajout d'un test</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <form [formGroup]="registerForm"   >
+                                        <div class="card-body">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="nom" class="form-control" 
+                                                        placeholder="Entrez le nom du test"  
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.nom.errors }" />  
+  
+                                                        <div *ngIf="submitted && fval_2.nom.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.nom.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                               
+                                            </div>
+  
+                                            <div class="form-group row mb-4">
+                                              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description
+                                                 </label>
+                                              <div class="col-sm-12 col-md-7">
+                                                  <input type="text" formControlName="titre" class="form-control" 
+                                                      placeholder="Entrez la description du test"  
+                                                      [ngClass]="{ 'is-invalid': submitted && fval_2.titre.errors }" />  
+  
+                                                      <div *ngIf="submitted && fval_2.titre.errors" class="invalid-feedback">
+                                                          <div *ngIf="fval_2.titre.errors.required">Champs obligatoire</div>
+                                                      </div>
+                                              </div>
+                                             
+                                          </div>
+  
+                                         
+  
+                                         
+                                           
+  
+  
+                                         
+  
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Matière
+                                                   </label>
+                                                <div *ngIf="matieres" class="col-sm-12 col-md-7">
+  
+                                                    <select  formControlName="matiere" class="form-control" (change)="onChangeMat($event.target.value)"  [ngClass]="{ 'is-invalid': submitted && fval_2.matiere.errors }">
+                                                        
+                                                        <option value="" disabled selected>Choisissez la matière de ce test 
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of matieres"  [value]="i._id" >{{i.nom}}  </option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.matiere.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.matiere.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="form-group row mb-4">
+                                              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Questions
+                                              </label>
+                                              
+                                              <div class="col-sm-12 col-md-7">  
+                                                  <br>
+                                                  <br>
+                                          <div *ngFor="let i of questions" >
+                                              <input formControlName="question" type="checkbox" (change)="onChange()" [(ngModel)]="i.selected" >
+                                              <label  ><b>{{i.nom}}</b> {{af}} {{i.question}}</label>
+                                            </div>
+                                          
+                                            </div>
+                                          </div>
+  
+                                        <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Classes
+                                            </label>
+                                            
+                                            <div class="col-sm-12 col-md-7">  
+                                                <br>
+                                                <br>
+                                        <div *ngFor="let i of classes" >
+                                            <input formControlName="classe" type="checkbox" (change)="onChange()" [(ngModel)]="i.selected" >
+                                            <label  >{{i.nom}}</label>
+                                          </div>
+                                        
+                                          </div>
+                                        </div>
+                                           
+                                        <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Date d'expiration
+                                               </label>
+                                            <div class="col-sm-12 col-md-7"> 
+                                                <input type="date" formControlName="dateFin" class="form-control"  min="{{d1}}"
+                                                    placeholder="Entrez la description expiration du test"  
+                                                    [ngClass]="{ 'is-invalid': submitted && fval_2.dateFin.errors }" />  
+
+                                                    <div *ngIf="submitted && fval_2.dateFin.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.dateFin.errors.required">Champs obligatoire</div>
+                                                    </div>
+                                            </div>
+                                           
+                                        </div>
+
+                                        <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Temps(En minute)
+                                               </label>
+                                            <div class="col-sm-12 col-md-7">
+                                                <input type="number" formControlName="temps" class="form-control" 
+                                                    placeholder="Entrez-la description du cours"  
+                                                    [ngClass]="{ 'is-invalid': submitted && fval_2.temps.errors }" />  
+
+                                                    <div *ngIf="submitted && fval_2.temps.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.temps.errors.required">Champs obligatoire et il doit comprendre seulement des chiffres</div>
+                                                        <div *ngIf="fval_2.temps.errors.pattern">Ce champs doit contenir seulement des
+                                                            chiffres.</div>
+                                                    </div>
+                                            </div>
+                                           
+                                        </div>
+                                          
+                                           
+                                            <br>
+                                            <br>
+                                            <div class="form-group row mb-4">
+                                                <label
+                                                    class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button (click)="onSubmit()" class="btn btn-primary" value="submit"
+                                                        type="submit">Ajouter</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+  </body>

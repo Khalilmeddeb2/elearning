@@ -1,0 +1,174 @@
+<section class="content ecommerce-page">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <!-- <h2>Passer QCM
+                   
+                </h2> -->
+            </div>
+            <!-- <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a routerLink="/EtudiantHome"><i class="zmdi zmdi-home"></i>
+                        Enseignant</a>
+                    </li>
+                    <li class="breadcrumb-item active"><a routerLink="/EtudiantHome/exercices">Exercices</a></li>
+                    <li class="breadcrumb-item active">Passer QCM</li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="main-content">
+            <section class="section">
+                <div class="section-body">
+                  <div class="container">
+                    <div>
+                    <button class="c" (click)="makePDF(id)" type="button">Télécharger</button>
+                    <br>
+                    </div>
+                    <div id="content" #content class="section" class="card" [hidden]="isQuestionCardShow">
+                      <div class="card-body">
+                        <label class="titre"><b>{{test.titre}}</b></label>
+                        <br>
+                        <form #questionTest="ngForm" novalidate>
+                          <div *ngFor="let exec of questions">
+                            <div>{{exec.question}}</div>
+                           
+                            <div  class="form-group row">
+                              <!-- <label class="col-md-3 col-form-label"><b>Cochez la bonne réponse</b></label> -->
+                              <div *ngIf="questions" class="col-md-9 col-form-label">
+                                <div *ngFor="let choix of exec.choix" class="form-check form-check-inline mr-1">
+                                  <input class="form-check-input"  type="checkbox" (change)="choix.selected = !choix.selected" [checked]="choix.selected"> 
+                                  <label class="form-check-label">{{choix.numero}}) {{choix.text}} </label>
+                                </div>
+                                </div>
+                                </div>
+                           
+                            <hr>
+                          </div>
+                        </form>
+                  
+                      </div>
+                    </div>
+                    <!-- <div *ngIf="status == true" >
+                     <h1>{{message}}</h1>
+                     </div>    -->
+  
+                     <!-- <div  class="alert alert-danger" role="alert" *ngIf="status == true">
+                      <div class="c1" >{{message}}</div>
+                    </div> -->
+  
+  
+                    <!-- <div *ngIf="verifTest == false" class="card" [hidden]="!isQuestionCardShow"> -->
+                      <div  class="card" [hidden]="!isQuestionCardShow">
+                      <div class="card-body">
+                        <div class="timer">
+                              {{counter}} Minutes <i style="font-size:20px" class="fa">&#xf017;</i>
+  
+                        </div>
+                        <label class="titre"><b>{{test.titre}}</b></label>
+                        <br>
+                        <form #questionTest="ngForm" novalidate>
+                          <div *ngFor="let exec of questions">
+                            <div>{{exec.question}}</div>
+                           
+                            <div  class="form-group row">
+                              <!-- <label class="col-md-3 col-form-label"><b>Cochez la bonne réponse</b></label> -->
+                              <div *ngIf="questions" class="col-md-9 col-form-label">
+                                <div *ngFor="let choix of exec.choix" class="form-check form-check-inline mr-1">
+                                  <input class="form-check-input"  type="checkbox" (change)="choix.selected = !choix.selected" [checked]="choix.selected"> 
+                                  <label class="form-check-label">{{choix.numero}}) {{choix.text}} </label>
+                                </div>
+                                </div>
+                                </div>
+                           
+                            <hr>
+                          </div>
+                        </form>
+                        
+                        <br><br>
+                        <div class="row">
+                          <div class="col-12" style="justify-content: center;display: flex;">
+                            <button *ngIf="test.publie == false" type="button" class="btn0" (click)="open(content)" style="margin-right: 450px;">Publier
+                              <ng-template #content let-modal>
+                                <div class="modal-header">
+                                  <h4 class="modal-title" id="modal-basic-title">Confirmation de publication</h4>
+                                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  
+                                    <div class="form-group">
+                                     <label>Êtes-vous sûr de vouloir publier ce test?
+                                    </label>
+                                    </div>
+                                 
+                                </div>
+                                <div class="modal-footer">
+                                    <button  type="button" class="btn2" (click)="updateTestPublish(test._id)">Publier</button>  
+                                  <button type="button" class="btn1" (click)="modal.close('Save click')">Annuler</button>
+                                </div>
+                              </ng-template>      
+                            </button> 
+                            <button type="button" class="btn btn-primary" id="pres" (click)="open2(content2)">Enregistrer
+                              <ng-template #content2 let-modal style="width: 100%!important;">
+                               
+                                      <div class="modal-body text-center" style="color: #196f77;">
+                                <h4>Nombre total de Questions: {{questions.length}} </h4>
+                                <h4>
+                                  Nombre total de réponses: {{totalAnswered}}
+                                </h4>
+                                <h4>
+                                  Nombre des réponses justes : {{rightAnswer}}
+                                </h4>
+                                <h4>
+                                  Votre score est : {{score}} %
+                                </h4>
+                                <br>
+                                <span>
+                                    <button type="button" class="btn btn-primary" (click)="open3(content3)" style="margin-right: 17px;background-color: #196f77;"> Réponses
+                                        <ng-template #content3 let-modal style="width: 200%!important;">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-body text-center" style="color: #196f77;">
+                                                <div *ngFor="let exec of questions">
+                                                  <div>{{exec.question}}</div>
+                                                  <div>Bonne réponse: {{exec.answer}}</div>
+                                                  <!-- <div>nbn Answer: {{exec.choix}}</div> -->
+                                                <!-- <div *ngFor="let choix of exec.choix" [style.color]="!choix.selected? '#ffc107' : choix.selected == exec.answer ? 'green': 'red'"> -->
+                                                  
+                                                  <!-- <div> your  Answer: {{exec.choix.selected}}</div> -->
+                                                  <!-- <div>Right Answer: {{choix.answer}}) {{choix[choix.answer]}}</div> -->
+                                                  <hr>
+                                                </div>
+                                                </div>
+                                                <!-- </div> -->
+                                                <button type="button" class="btn btn-default" (click)="close()" style="margin-left: 17px;background-color: red;">Fermer</button>
+                                              </div>
+                                            <!-- </div> -->
+                                            <!-- /.modal-content -->
+                                          </div>
+                                          </ng-template>
+                                      </button>
+                                </span>    
+                                     
+                                <button type="button" class="btn btn-default" (click)="close()" style="margin-left: 17px;background-color: red;">Fermer</button>
+  
+                                 
+                               </div>
+                              </ng-template>
+                            </button>
+                            <button type="button" class="btn btn-default" (click)="HomePage()" style="margin-right: 30px;">Retourner</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </section>

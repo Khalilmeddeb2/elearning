@@ -1,0 +1,91 @@
+
+
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Liste des photos
+                    <!-- <small class="text-muted">Bienvenue à BrainNut </small> -->
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a routerLink="/ParentHome"><i class="zmdi zmdi-home"></i>
+                        Parent</a>
+                    </li>
+                    <li class="breadcrumb-item active"><a routerLink="/ParentHome/listeEnfants">Liste des enfants</a></li>
+                    <li class="breadcrumb-item active">Liste des photos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+      <div >
+        <input id="search-input" type="search" #myInput class="form-control" [(ngModel)] ="datebe" (input)="search()"  placeholder="Recherche" />
+        
+      </div>
+     
+      <button  type="button" >
+          <i class="zmdi zmdi-search"></i>
+      </button>
+     
+    </div>
+<ul class="grid">
+ 
+    <li *ngFor="let i of photosEnfants">
+      <figure class="grid__figure">
+        <img [src]= "i.filename" alt="">
+        <figcaption class="fig1">{{i.datebe | date:'dd-MM-yyy' }}</figcaption>
+        <figcaption class="fig2">{{i.description}}</figcaption>
+      </figure>
+    </li>
+    <!-- <li>
+      <figure class="grid__figure">
+        <img src="https://picsum.photos/200/800/?random" alt="">
+        <figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="grid__figure">
+        <img src="https://picsum.photos/200/300/?random" alt="">
+        <figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="grid__figure">
+        <img src="https://picsum.photos/400/200/?random" alt="">
+        <figcaption>Vehicula Quam Nibh</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="grid__figure">
+        <img src="https://picsum.photos/200/600/?random" alt="">
+        <figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="grid__figure">
+        <img src="https://picsum.photos/600/600/?random" alt="">
+        <figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="grid__figure">
+        <img src="https://picsum.photos/420/300/?random" alt="">
+        <figcaption>Vehicula Quam Nibh</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="grid__figure">
+        <img src="https://picsum.photos/800/800/?random" alt="">
+        <figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="grid__figure">
+        <img src="https://picsum.photos/640/400/?random" alt="">
+        <figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
+      </figure>
+    </li> -->
+  </ul>
+  </section>

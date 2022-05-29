@@ -1,0 +1,54 @@
+{
+  "name": "input-spinner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Number-Spinner, Support keyboard operations and continuous changing",
+  "keywords": [
+    "spinner",
+    "number-steps",
+    "number-spinner",
+    "continuous"
+  ],
+  "homepage": "https://vsn4ik.github.io/input-spinner/",
+  "repository": "vsn4ik/input-spinner",
+  "license": "MIT",
+  "author": {
+    "name": "xixilive",
+    "email": "xixilive@gmail.com",
+    "url": "https://github.com/xixilive"
+  },
+  "contributors": [
+    {
+      "name": "Vasilii A.",
+      "url": "https://github.com/vsn4ik"
+    }
+  ],
+  "main": "dist/input-spinner.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "css": "npm run css-compile; npm run css-minify",
+    "css-compile": "lessc src/$npm_package_name.less dist/$npm_package_name.css",
+    "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/$npm_package_name.min.css dist/$npm_package_name.css",
+    "js": "npm run js-compile; npm run js-minify",
+    "js-compile": "mkdir dist; cp -rf src/*.js dist/",
+    "js-minify": "terser --compress --output dist/$npm_package_name.min.js dist/$npm_package_name.js",
+    "release-zip": "rm -rf $npm_package_name-$npm_package_version-dist && cp -r dist/ $npm_package_name-$npm_package_version-dist && zip -r9 $npm_package_name-$npm_package_version-dist.zip $npm_package_name-$npm_package_version-dist && rm -rf $npm_package_name-$npm_package_version-dist",
+    "test": "npm run css; npm run js; karma start tests/karma.conf.js",
+    "serve": "serve --listen 5000 --no-clipboard ./docs/"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "jquery": "^3.5.1",
+    "karma": "^5.1.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-qunit": "^4.1.1",
+    "less": "^3.12.2",
+    "puppeteer": "^5.2.1",
+    "qunit": "^2.10.1",
+    "serve": "^11.3.2",
+    "terser": "^5.0.0"
+  }
+}

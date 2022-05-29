@@ -1,0 +1,195 @@
+<body>
+    <section class="content ecommerce-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Ajout d'un nouvel enfant
+                        <!-- <small class="text-muted">Bienvenue à BrainNut </small> -->
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/DirecteurHomeCrech"><i class="zmdi zmdi-home"></i>
+                                Directeur</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a routerLink="/DirecteurHomeCrech/enfants">Enfants</a></li>
+                        <li class="breadcrumb-item active">Ajout d'un enfant</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                                        <div class="card-body">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="nom" class="form-control" 
+                                                        placeholder="Entrez le nom de l'enfant"  
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.nom.errors }" />  
+
+                                                        <div *ngIf="submitted && fval_2.nom.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.nom.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                               
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Prénom
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="prenom" class="form-control" 
+                                                        placeholder="Entrez le prénom de l'enfant"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.prenom.errors }" />
+                                                       
+                                                        <div *ngIf="submitted && fval_2.prenom.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.prenom.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Date de naissance
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="date" formControlName="dateNaissance" class="form-control" 
+                                                        placeholder="Entrez le Date de naissance de l'enfant"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.dateNaissance.errors }" />
+                                                       
+                                                        <div *ngIf="submitted && fval_2.dateNaissance.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.dateNaissance.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Numéro
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="number" formControlName="numero" class="form-control" 
+                                                        placeholder="Entrez le numéro du rue de l'adresse de l'enfant"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.numero.errors }" />
+                                                       
+                                                        <div *ngIf="submitted && fval_2.numero.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.numero.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Rue
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="rue" class="form-control" 
+                                                        placeholder="Entrez l'adresse de l'enfant"
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.rue.errors }" />
+                                                       
+                                                        <div *ngIf="submitted && fval_2.rue.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.rue.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">ville
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="text" formControlName="ville" class="form-control" 
+                                                        placeholder="Entrez la ville "
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.ville.errors }" />
+                                                       
+                                                        <div *ngIf="submitted && fval_2.ville.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.ville.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Code postal
+                                                   </label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input type="number" formControlName="codePostal" class="form-control" 
+                                                        placeholder="Entrez le code postal de la ville "
+                                                        [ngClass]="{ 'is-invalid': submitted && fval_2.codePostal.errors }" />
+                                                       
+                                                        <div *ngIf="submitted && fval_2.codePostal.errors" class="invalid-feedback">
+                                                            <div *ngIf="fval_2.codePostal.errors.required">Champs obligatoire</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                           
+
+                                           
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Parent
+                                                   </label>
+                                                <div *ngIf="classes" class="col-sm-12 col-md-7">
+                                                    <select formControlName="parent" class="form-control"  [ngClass]="{ 'is-invalid': submitted && fval_2.parent.errors }">
+                                                        
+                                                        <option value="" disabled selected>Entrez le parent de l'enfant
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of parents"  [value]="i._id" >{{i.firstName}}  {{i.lastName}}</option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.parent.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.parent.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+
+                                          
+
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Classe
+                                                   </label>
+                                                <div *ngIf="classes" class="col-sm-12 col-md-7">
+                                                    <select formControlName="classe" class="form-control"  [ngClass]="{ 'is-invalid': submitted && fval_2.classe.errors }">
+                                                        
+                                                        <option value="" disabled selected>Entrez la classe de l'enfant
+                                                            
+                                                        </option>
+                                                        <option *ngFor="let i of classes"  [value]="i._id" >{{i.nom}}</option>
+                                                    </select>
+                                                        
+                                                    <div *ngIf="submitted && fval_2.classe.errors" class="invalid-feedback">
+                                                        <div *ngIf="fval_2.classe.errors.required">Champs obligatoire</div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+
+                                         
+                                           
+                                            <br>
+                                            <br>
+                                            <div class="form-group row mb-4">
+                                                <label
+                                                    class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button  class="btn btn-primary" value="submit"
+                                                        type="submit">Ajouter</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</body>

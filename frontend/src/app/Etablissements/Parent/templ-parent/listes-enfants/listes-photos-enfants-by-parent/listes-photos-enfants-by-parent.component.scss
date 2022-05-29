@@ -1,0 +1,268 @@
+@import "../../../../../../assets/backoffice/plugins/bootstrap/css/bootstrap.min.css";
+@import "../../../../../../assets/backoffice/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css";
+@import "../../../../../../assets/backoffice/plugins/morrisjs/morris.min.css";
+@import "../../../../../../assets/backoffice/css/main.css";
+@import "../../../../../../assets/backoffice/css/color_skins.css";
+
+::ng-deep .logout {
+  cursor: pointer !important;
+}
+.block-header a {
+  color: var(--dil-green) !important;
+}
+
+::ng-deep body,
+.navbar,
+.sidebar {
+  font-family: Avenir, sans-serif !important;
+}
+
+::ng-deep .theme-cyan .sidebar .menu .list li.active > :first-child i,
+.theme-cyan .sidebar .menu .list li.active > :first-child span {
+  color: var(--dil-green) !important;
+}
+::ng-deep .theme-cyan .sidebar .menu .list li:hover > :first-child i,
+.theme-cyan .sidebar .menu .list li:hover > :first-child span {
+  color: var(--dil-green) !important;
+}
+::ng-deep .theme-cyan .sidebar .menu .list a:hover {
+  color: var(--dil-green) !important;
+}
+::ng-deep .block-header h2 {
+  color: var(--dil-blue) !important;
+}
+::ng-deep .theme-cyan .card .header h2 strong {
+  color: var(--dil-green) !important;
+}
+::ng-deep .theme-cyan .card .header h2:before {
+  background: var(--dil-green) !important;
+}
+
+::ng-deep .logout {
+  cursor: pointer !important;
+}
+.navbar-left {
+  margin-top: 0% !important;
+}
+.navbar-right {
+  margin-top: 0% !important;
+}
+.sidebar .user-info .image img {
+  width: 120px !important;
+  box-shadow: none !important;
+}
+
+//#f9656b !important
+.zmdi-face{
+  color: #f9656b !important;
+}
+/* Styles: */
+.icon {
+  position: relative;
+	background: white;
+	cursor: pointer;
+	margin: auto;
+	color: #053b6e;
+	border-radius: 50%;
+ 
+
+  text-align: center;
+ 	font-size: 2.75em;
+ 	font-weight: bold;
+ 	transition: 0.24s 0.2s;
+}
+
+.icon:hover {
+	background: rgba(white,0.75);
+}
+
+.menu {
+  position: absolute;
+  
+  cursor: default;
+  border-radius: 50%;
+  transform: scale(0);
+	transition: transform 1.4s 0.07s;
+	z-index: -5;
+}
+
+.spread {
+	position: absolute;
+	
+	
+	transition: all 0.5s 0.1s;
+}
+
+.icon:hover {
+	 .menu {
+		 transition: transform 0.4s 0.08s,
+				  				        z-index   0s  0.5s;
+  	 transform: scale(1);
+  	 z-index: 5;
+	 }
+	 .spread, .unit {
+	 	 transition: all 0.6s;
+	 }
+  
+/* Where all the MAGIC happens: */
+	 
+} /* END .icon:hover */
+
+.unit {
+ 	position: absolute;
+ 	background: white;
+ 	font-size: 60%;
+  text-decoration: none;
+ 	
+ 	color: dodgerblue;
+ 	border-radius: 50%;
+ 	transition: 0.6s;
+}
+button {
+    text-transform: none;
+    background-color: #61C0BF;
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+.zmdi-accounts-outline{
+  color: #f9656b !important;
+}
+.icon1 {
+  position: relative;
+  background: white;
+  cursor: pointer;
+  margin: auto;
+  color: #053b6e;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2.75em;
+  font-weight: bold;
+  transition: 0.24s 0.2s;
+}
+
+.icon2 {
+  position: relative;
+  background: white;
+  cursor: pointer;
+  margin: auto;
+  color: #053b6e;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2.75em;
+  font-weight: bold;
+  transition: 0.24s 0.2s;
+}
+
+// --------------------------
+// Set-up styles
+// --------------------------
+* { box-sizing: border-box; }
+body { background: slategray; margin: 0; padding: 3em 1em;}
+ul { list-style: none; margin: 0; padding: 0;}
+figure { margin: 0; }
+//figcaption { font-style: italic; font-size: 0.8em; color: grey; line-height: 1.4; }
+
+// --------------------------
+// Grid styles
+// --------------------------
+.grid {
+  display: grid;
+  grid-auto-flow: column; // display the items in columns only, ie horizontal
+  grid-auto-columns: 90%; // create as many columns as there are items. 90% so we can see next item on the right.
+  grid-gap: 1em;
+  //overflow-x: scroll; // scroll only within the grid, not entire page
+  -webkit-overflow-scrolling: touch; // better scrolling on touch
+  padding: 2em 1em;
+  background: white;
+  
+  @media all and (min-width: 600px) {
+    grid-auto-flow: initial; // default: display items in rows and cols
+    grid-template-columns: repeat(auto-fit, minmax(auto,20em)); // as many columns with max-width of 20em;
+    //justify-content: center; // center the items - this is optional
+  }
+  
+  &__figure {
+    display: grid;
+    grid-template-rows: 15em 1fr; // 15em high row for image – value could be whatever
+    grid-gap: 1em;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // crop image within its cell
+    }
+  }
+  .fig1{
+   
+    font-size: 0.8em;
+    color: #053b6e;
+    line-height: 1.4;
+    text-align: center;
+    font-weight: bold;
+  }
+  /*
+font-size: 0.8em;
+  color: #222;
+  line-height: 1.4;
+  margin-left: 22px;
+  */    /* font-style: italic; */
+  .fig2{
+
+    font-size: 0.8em;
+  color: #222;
+  line-height: 1.4;
+  margin-left: 22px;
+  margin-top: -11px;
+  }
+  
+}
+
+// search 
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #61C0BF;
+  border: #61C0BF;
+}
+//
+.form-control{
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  box-shadow: none;
+  height: auto;
+  background-color: #e9ecef;
+  border: #e9ecef;
+  border-radius: 30px;
+  color: #2c2c2c;
+  line-height: normal;
+  font-size: .8571em;
+  position: relative;
+}
+//
+.block-header a {
+  color: var(--dil-green) !important;
+}
+
+::placeholder {
+  color: gray !important;
+  font-size: 15px;
+}
+
+button {
+  /* text-transform: none; */
+  background-color: #61C0BF;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  /* text-align: center; */
+  /* text-decoration: none; */
+  /* display: inline-block; */
+  /* font-size: 16px; */
+  /* margin: 4px 2px; */
+}

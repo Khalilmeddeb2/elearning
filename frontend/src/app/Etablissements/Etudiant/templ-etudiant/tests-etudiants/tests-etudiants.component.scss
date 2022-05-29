@@ -1,0 +1,89 @@
+@import "../../../../../assets/backoffice/plugins/bootstrap/css/bootstrap.min.css";
+@import "../../../../../assets/backoffice/plugins/footable-bootstrap/css/footable.bootstrap.min.css";
+@import "../../../../../assets/backoffice/plugins/footable-bootstrap/css/footable.standalone.min.css";
+@import "../../../../../assets/backoffice/css/main.css";
+@import "../../../../../assets/backoffice/css/ecommerce.css";
+@import "../../../../../assets/backoffice/css/color_skins.css";
+@import "../../../../../assets/backoffice/css/ecommerce.css";
+
+.zmdi-edit {
+  color: white	 !important
+}
+.zmdi-eye {
+  color: #053b6e	 !important
+}
+.zmdi-search {
+  color: aliceblue;
+}
+
+::placeholder {
+  color: gray !important;
+  font-size: 15px;
+}
+
+
+// search 
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #61C0BF;
+  border: #61C0BF;
+}
+//
+.form-control{
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  box-shadow: none;
+  height: auto;
+  background-color: #e9ecef;
+  border: #e9ecef;
+  border-radius: 30px;
+  color: #2c2c2c;
+  line-height: normal;
+  font-size: .8571em;
+  position: relative;
+}
+//
+.block-header a {
+  color: var(--dil-green) !important;
+}
+
+.pagination.pagination-primary .page-item.active > .page-link,
+.pagination.pagination-primary .page-item.active > .page-link:focus,
+.pagination.pagination-primary .page-item.active > .page-link:hover {
+  background-color: var(--dil-green) !important;
+  border-color: var(--dil-green) !important;
+}
+
+.btn-primary {
+  background-color: var(--dil-green) !important;
+}
+
+tr {
+  cursor: pointer !important;
+}
+
+::ng-deep .btn,
+.navbar .navbar-nav > button.btn {
+  background-color: #fff !important;
+  color: black !important;
+}
+th {
+    
+    padding: 10px; font-style: normal;
+  font-size: large;
+  color: white;
+  background-color: #61C0BF;}
+
+  h4,.h4 {
+    font-size: 1.714em;
+    line-height: 1.45em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #f9656b;
+}
+
+
+
+
